@@ -7,6 +7,11 @@ import { MenuComponent } from './components/menu/menu.component';
 import { HomeComponent } from './components/home/home.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { NotFoundComponent } from './not-found/not-found.component';
+import { LoginComponent } from './components/login/login.component';
+import { RegisterComponent } from './components/register/register.component';
+import { MessageComponent } from './components/message/message.component';
+import { ProfileComponent } from './components/profile/profile.component';
+import { PhotographerComponent } from './photographer/photographer.component';
 
 
 
@@ -17,6 +22,11 @@ import { NotFoundComponent } from './not-found/not-found.component';
     HomeComponent,
     FooterComponent,
     NotFoundComponent,
+    LoginComponent,
+    RegisterComponent,
+    MessageComponent,
+    ProfileComponent,
+    PhotographerComponent,
 
   ],
   imports: [
