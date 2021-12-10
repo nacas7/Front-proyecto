@@ -14,6 +14,9 @@ import { ProfileComponent } from './components/profile/profile.component';
 import { PhotographerComponent } from './photographer/photographer.component';
 import { HttpClientModule } from '@angular/common/http';
 import { ReactiveFormsModule } from '@angular/forms';
+import { CookiesComponent } from './components/cookies/cookies.component';
+import { PolicyPrivateComponent } from './components/policy-private/policy-private.component';
+import { AboutComponent } from './components/about/about.component';
 
 
 
@@ -29,6 +32,9 @@ import { ReactiveFormsModule } from '@angular/forms';
     MessageComponent,
     ProfileComponent,
     PhotographerComponent,
+    CookiesComponent,
+    PolicyPrivateComponent,
+    AboutComponent,
 
   ],
   imports: [
