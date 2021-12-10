@@ -17,6 +17,9 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { CookiesComponent } from './components/cookies/cookies.component';
 import { PolicyPrivateComponent } from './components/policy-private/policy-private.component';
 import { AboutComponent } from './components/about/about.component';
+import { HeroComponent } from './components/hero/hero.component';
+import { MapComponent } from './components/map/map.component';
+import { GoogleMapsModule } from '@angular/google-maps';
 
 
 
@@ -35,13 +38,16 @@ import { AboutComponent } from './components/about/about.component';
     CookiesComponent,
     PolicyPrivateComponent,
     AboutComponent,
+    HeroComponent,
+    MapComponent,
 
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    GoogleMapsModule
 
 
   ],
