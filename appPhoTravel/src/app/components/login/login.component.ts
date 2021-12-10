@@ -28,17 +28,17 @@ export class LoginComponent implements OnInit {
   async onSubmit() {
     this.error = '';
     const response = await this.UsuariosService.login(this.formulario.value)
+    console.log(response)
     if (response.error) {
       this.error = response.error;
     } else {
-      console.log(response.token)
-    }
+      localStorage.setItem('token_photravel', response.token);
+      alert('login correcto');
+      this.UsuariosService.logged(true);
+      this.router.navigate(['/home']);
 
+    }
 
   }
 
 }
-
-
-//ME FALTAN LAS CORS MIRAR PORQUE
-//ALMACENAR LUEGO EL LOCALSTORAGE Y navigate(['/home'])

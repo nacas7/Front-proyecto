@@ -1,4 +1,4 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Subject } from 'rxjs';
 
@@ -17,13 +17,31 @@ export class UsuariosService {
   }
 
   register(formValue: any): Promise<any> {
-    return this.HttpClient.post<any>(`${this.baseUrl}/register`, formValue).toPromise()
+    console.log(formValue)
+    const httpOptions = {
+      headers: new HttpHeaders({
+        'Content-Type': 'application/json'
+      })
+    }
+    return this.HttpClient.post<any>(`${this.baseUrl}/register`, formValue, httpOptions).toPromise()
   }
 
   login(formValue: any): Promise<any> {
-    return this.HttpClient.post<any>(`${this.baseUrl}/login`, formValue).toPromise()
+    const httpOptions = {
+      headers: new HttpHeaders({
+        'Content-Type': 'application/json'
+      })
+    }
+    return this.HttpClient.post<any>(`${this.baseUrl}/login`, formValue, httpOptions).toPromise()
   }
 
+  logged(isLogged: boolean) {
+    this.login$.next(isLogged)
+  }
+
+  loginObs() {
+    return this.login$.asObservable();
+  }
 
 
 }

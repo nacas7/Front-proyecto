@@ -17,7 +17,9 @@ export class RegisterComponent implements OnInit {
     private router: Router
   ) {
     this.formulario = new FormGroup({
-      unsername: new FormControl,
+      username: new FormControl(
+
+      ),
       email: new FormControl,
       password: new FormControl,
       repit_password: new FormControl
