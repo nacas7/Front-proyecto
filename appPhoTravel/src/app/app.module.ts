@@ -23,6 +23,8 @@ import { GoogleMapsModule } from '@angular/google-maps';
 
 
 
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -47,7 +49,8 @@ import { GoogleMapsModule } from '@angular/google-maps';
     AppRoutingModule,
     HttpClientModule,
     ReactiveFormsModule,
-    GoogleMapsModule
+    GoogleMapsModule,
+
 
 
   ],
