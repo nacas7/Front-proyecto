@@ -20,6 +20,7 @@ import { AboutComponent } from './components/about/about.component';
 import { HeroComponent } from './components/hero/hero.component';
 import { MapComponent } from './components/map/map.component';
 import { GoogleMapsModule } from '@angular/google-maps';
+import { AgmCoreModule } from '@agm/core';
 
 
 
@@ -50,8 +51,9 @@ import { GoogleMapsModule } from '@angular/google-maps';
     HttpClientModule,
     ReactiveFormsModule,
     GoogleMapsModule,
-
-
+    AgmCoreModule.forRoot({
+      apiKey: 'AIzaSyD7sdzDGO3VARpKWBrEvA-8bG2UewlGwgE'
+    })
 
   ],
   providers: [],
