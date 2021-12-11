@@ -11,7 +11,7 @@ import { LoginComponent } from './components/login/login.component';
 import { RegisterComponent } from './components/register/register.component';
 import { MessageComponent } from './components/message/message.component';
 import { ProfileComponent } from './components/profile/profile.component';
-import { PhotographerComponent } from './photographer/photographer.component';
+import { PhotographerComponent } from './components/photographer/photographer.component';
 import { HttpClientModule } from '@angular/common/http';
 import { ReactiveFormsModule } from '@angular/forms';
 import { CookiesComponent } from './components/cookies/cookies.component';
@@ -19,12 +19,9 @@ import { PolicyPrivateComponent } from './components/policy-private/policy-priva
 import { AboutComponent } from './components/about/about.component';
 import { HeroComponent } from './components/hero/hero.component';
 import { MapComponent } from './components/map/map.component';
-import { GoogleMapsModule } from '@angular/google-maps';
-import { AgmCoreModule } from '@agm/core';
-
-
-
-
+// import { AgmMap } from '@agm/core';
+// import { AgmCoreModule } from '@agm/core';
+// import { GoogleMapsModule } from '@angular/google-maps';
 
 @NgModule({
   declarations: [
@@ -50,10 +47,12 @@ import { AgmCoreModule } from '@agm/core';
     AppRoutingModule,
     HttpClientModule,
     ReactiveFormsModule,
-    GoogleMapsModule,
-    AgmCoreModule.forRoot({
-      apiKey: 'AIzaSyD7sdzDGO3VARpKWBrEvA-8bG2UewlGwgE'
-    })
+    // AgmMap,
+    // GoogleMapsModule,
+    // AgmCoreModule.forRoot({
+    //   apiKey: 'AIzaSyD7sdzDGO3VARpKWBrEvA-8bG2UewlGwgE'
+    // })
+
 
   ],
   providers: [],

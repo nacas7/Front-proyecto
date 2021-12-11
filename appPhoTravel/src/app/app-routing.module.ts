@@ -9,7 +9,7 @@ import { PolicyPrivateComponent } from './components/policy-private/policy-priva
 import { ProfileComponent } from './components/profile/profile.component';
 import { RegisterComponent } from './components/register/register.component';
 import { NotFoundComponent } from './not-found/not-found.component';
-import { PhotographerComponent } from './photographer/photographer.component';
+import { PhotographerComponent } from './components/photographer/photographer.component';
 
 
 const routes: Routes = [
