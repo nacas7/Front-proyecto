@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import * as AOS from 'aos';
+
 
 @Component({
   selector: 'app-hero',
@@ -9,7 +11,11 @@ export class HeroComponent implements OnInit {
 
   constructor() { }
 
-  ngOnInit(): void {
+  ngOnInit() {
+    AOS.init({
+      duration: 500
+    }
+    );
   }
 
 }

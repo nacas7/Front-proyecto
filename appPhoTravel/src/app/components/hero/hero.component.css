@@ -45,7 +45,7 @@ a:hover {
     padding-left: 5%;
 }
 img{
-  width: 100%;
+  width: 60%;
 }
 .container .article div .image{
   background-image: url('../../../assets/images/arbol.jpg');
@@ -54,6 +54,9 @@ img{
 }
 .row{
   display: flex;
+}
+.container{
+  padding-top: 10%;
 }
 
 
