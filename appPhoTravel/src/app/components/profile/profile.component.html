@@ -1,1 +1,63 @@
-<p>profile works!</p>
+<div class="container">
+    <input type="button" value="Perfil">
+    <input type="button" value="Cuenta">
+    <div class="row">
+        <div class="col-8 offset-2">
+            <h4>Perfil</h4>
+            <h6>Información pública</h6>
+            <form>
+                <div class="mb-3">
+                    <label class="form-label">Foto principal</label>
+                    <input class="form-control" type="text" formControlName="username">
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Nombre</label>
+                    <input class="form-control" type="text" formControlName="username">
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Apellidos</label>
+                    <input class="form-control" type="text" formControlName="username">
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Descripción</label>
+                    <textarea class="form-control" rows="10" cols="50" formControlName="username"></textarea>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Photographer</label>
+                    <br>
+                    <label id="cbox1"><input type="checkbox" />Si</label>
+                    <label id="cbox2"><input type="checkbox" />No</label>
+
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Ubicación</label>
+                    <input class="form-control" type="text" formControlName="username">
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Web / RRSS</label>
+                    <input class="form-control" type="text" formControlName="username">
+                </div>
+                <input type="submit" value="Enviar" class="btn btn-block btn-dark">
+            </form>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-8 offset-2">
+            <h4>Cuenta</h4>
+            <h6>Información personal</h6>
+            <form>
+                <div class="mb-3">
+                    <label class="form-label">Email</label>
+                    <input class="form-control" type="text" formControlName="username">
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Contraseña</label>
+                    <input class="form-control" type="password" formControlName="username">
+                </div>
+                <input type="submit" value="Enviar" class="btn btn-block btn-dark">
+                <input type="submit" value="Eliminar cuenta" class="btn btn-block btn-dark">
+
+            </form>
+        </div>
+    </div>
+</div>

@@ -17,10 +17,11 @@ export class RegisterComponent implements OnInit {
     private router: Router
   ) {
     this.formulario = new FormGroup({
-      username: new FormControl(
-
-      ),
+      username: new FormControl,
       email: new FormControl,
+      nombre: new FormControl,
+      apellidos: new FormControl,
+      fecha_nacimiento: new FormControl,
       password: new FormControl,
       repit_password: new FormControl
     })

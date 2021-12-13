@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { MenuComponent } from './components/menu/menu.component';
@@ -19,9 +18,8 @@ import { PolicyPrivateComponent } from './components/policy-private/policy-priva
 import { AboutComponent } from './components/about/about.component';
 import { HeroComponent } from './components/hero/hero.component';
 import { MapComponent } from './components/map/map.component';
-// import { AgmMap } from '@agm/core';
-// import { AgmCoreModule } from '@agm/core';
-// import { GoogleMapsModule } from '@angular/google-maps';
+import { PhotographerPerfilComponent } from './components/photographer-perfil/photographer-perfil.component';
+import { AgmCoreModule } from '@agm/core';
 
 @NgModule({
   declarations: [
@@ -40,6 +38,7 @@ import { MapComponent } from './components/map/map.component';
     AboutComponent,
     HeroComponent,
     MapComponent,
+    PhotographerPerfilComponent,
 
   ],
   imports: [
@@ -47,13 +46,10 @@ import { MapComponent } from './components/map/map.component';
     AppRoutingModule,
     HttpClientModule,
     ReactiveFormsModule,
-    // AgmMap,
-    // GoogleMapsModule,
-    // AgmCoreModule.forRoot({
-    //   apiKey: 'AIzaSyD7sdzDGO3VARpKWBrEvA-8bG2UewlGwgE'
-    // })
-
-
+    AgmCoreModule.forRoot({
+      apiKey: 'AIzaSyBMOcTcAkobrlfKIBOJNz6lDw2R5fJsk_Q',
+      libraries: ['places']
+    })
   ],
   providers: [],
   bootstrap: [AppComponent]

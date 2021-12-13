@@ -1,4 +1,13 @@
 agm-map{
-    width: 800px;
-    height: 800px;
+    width: 500px;
+    height: 500px;
 }
+input{
+    width: 50%;
+    margin-bottom: 5%;
+}
+/* .container{
+    padding-top: 10%;
+    margin-bottom: 10%;
+    
+} */

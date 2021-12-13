@@ -1,1 +1,36 @@
-<p>photographer works!</p>
+<div class="container">
+    <button class="btn btn-dark">mapa</button>
+    <button class="btn btn-dark">Lista</button>
+    <select>
+        <option value="0">Filtros</option>
+        <option value="1">Valoraciones</option>
+        <option value="2">Precio</option>
+
+    </select>
+</div>
+<div class="container">
+    <div class="row">
+        <div class="col-4">
+            <app-map class="mapa"></app-map>
+        </div>
+        <div class="col-7">
+            <div class="col s12 m7">
+                <h2 class="header">Horizontal Card</h2>
+                <div class="card horizontal">
+                    <div class="card-image">
+                        <img src="https://lorempixel.com/100/190/nature/6">
+                    </div>
+                    <div class="card-stacked">
+                        <div class="card-content">
+                            <p>I am a very simple card. I am good at containing small bits of information.</p>
+                        </div>
+                        <div class="card-action">
+                            <a [routerLink]="['/photographer-profile']">Máss información</a>
+                            <a>Contactar</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
