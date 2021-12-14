@@ -28,7 +28,7 @@ export class MapComponent implements OnInit {
 
 
   ) {
-    this.lat
+
   }
 
   ngOnInit() {

@@ -1,0 +1,26 @@
+<div class="container">
+    <input type="button" value="Perfil" [routerLink]="['/profile']">
+    <input type="button" value="Cuenta" [routerLink]="['/profile-private']">
+</div>
+<div class="container">
+    <div class="row">
+        <div class="col-8 offset-2">
+            <h4>Cuenta</h4>
+            <h6>Información personal</h6>
+            <form>
+                <div class="mb-3">
+                    <label class="form-label">Email</label>
+                    <input class="form-control" type="text" formControlName="username">
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Contraseña</label>
+                    <input class="form-control" type="password" formControlName="username">
+                </div>
+                <input type="submit" value="Guardar" class="btn btn-block btn-dark">
+                <input type="submit" value="Eliminar cuenta" class="btn btn-block btn-danger">
+
+            </form>
+        </div>
+    </div>
+
+</div>

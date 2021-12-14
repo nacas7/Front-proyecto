@@ -20,6 +20,7 @@ import { HeroComponent } from './components/hero/hero.component';
 import { MapComponent } from './components/map/map.component';
 import { PhotographerPerfilComponent } from './components/photographer-perfil/photographer-perfil.component';
 import { AgmCoreModule } from '@agm/core';
+import { ProfilePrivateComponent } from './components/profile-private/profile-private.component';
 
 @NgModule({
   declarations: [
@@ -39,6 +40,7 @@ import { AgmCoreModule } from '@agm/core';
     HeroComponent,
     MapComponent,
     PhotographerPerfilComponent,
+    ProfilePrivateComponent,
 
   ],
   imports: [

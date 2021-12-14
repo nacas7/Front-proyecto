@@ -1,4 +1,8 @@
+
 import { Component, OnInit } from '@angular/core';
+import { FormControl, FormGroup } from '@angular/forms';
+import { PerfileService } from 'src/app/perfile.service';
+
 
 @Component({
   selector: 'app-profile',
@@ -7,9 +11,22 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ProfileComponent implements OnInit {
 
-  constructor() { }
+
+  formulario: FormGroup;
+  constructor(private prefileServices: PerfileService,
+  ) {
+    this.formulario = new FormGroup({
+      ubication: new FormControl(),
+      web: new FormControl(),
+
+    });
+  }
+
 
   ngOnInit(): void {
   }
 
+  async onSubmit() {
+    await this.prefileServices.register(this.formulario.value)
+  }
 }
