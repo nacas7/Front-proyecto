@@ -18,6 +18,7 @@ export class ProfileComponent implements OnInit {
     this.formulario = new FormGroup({
       ubication: new FormControl(),
       web: new FormControl(),
+      description: new FormControl()
 
     });
   }
