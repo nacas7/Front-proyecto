@@ -17,7 +17,7 @@ export class UsuariosService {
   }
 
   register(formValue: any): Promise<any> {
-    console.log(formValue)
+
     const httpOptions = {
       headers: new HttpHeaders({
         'Content-Type': 'application/json'
@@ -42,6 +42,20 @@ export class UsuariosService {
   loginObs() {
     return this.login$.asObservable();
   }
+
+  getById(idusuarios: number): Promise<any> {
+    return this.HttpClient.get<any>(`${this.baseUrl}/${idusuarios}`).toPromise()
+  };
+
+  update(idUsuarios: number, formValue: any): Promise<any> {
+    const httpOptions = {
+      headers: new HttpHeaders({
+        'Content-Type': 'application/json'
+      })
+    }
+    return this.HttpClient.put<any>(`${this.baseUrl}/${idUsuarios}`, formValue, httpOptions).toPromise()
+  }
+
 
 
 }

@@ -1,7 +1,8 @@
 
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
-import { PerfileService } from 'src/app/perfile.service';
+import { ActivatedRoute } from '@angular/router';
+import { UsuariosService } from 'src/app/usuarios.service';
 
 
 @Component({
@@ -11,23 +12,35 @@ import { PerfileService } from 'src/app/perfile.service';
 })
 export class ProfileComponent implements OnInit {
 
-
   formulario: FormGroup;
-  constructor(private prefileServices: PerfileService,
-  ) {
-    this.formulario = new FormGroup({
-      ubication: new FormControl(),
-      web: new FormControl(),
-      description: new FormControl()
+  idusuarios!: number;
+  constructor(
+    private usuariosServices: UsuariosService,
+    private activateRoute: ActivatedRoute
 
-    });
+  ) {
+
+    this.formulario = new FormGroup({
+      nombre: new FormControl(),
+      apellidos: new FormControl()
+
+    })
   }
 
 
   ngOnInit(): void {
+    this.activateRoute.params.subscribe(async params => {
+      this.idusuarios = params.idusuarios;
+      const response = this.usuariosServices.getById(params.idusuarios)
+
+
+    })
   }
 
-  async onSubmit() {
-    await this.prefileServices.register(this.formulario.value)
+
+  async onUpDate() {
+    await this.usuariosServices.update(this.formulario.value, this.idusuarios!)
+    // this.formulario.reset()
   }
+
 }

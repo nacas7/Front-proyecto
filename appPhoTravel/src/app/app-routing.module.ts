@@ -10,8 +10,8 @@ import { ProfileComponent } from './components/profile/profile.component';
 import { RegisterComponent } from './components/register/register.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { PhotographerComponent } from './components/photographer/photographer.component';
-import { PhotographerPerfilComponent } from './components/photographer-perfil/photographer-perfil.component';
 import { ProfilePrivateComponent } from './components/profile-private/profile-private.component';
+import { RegisterPhotographerComponent } from './components/register-photographer/register-photographer.component';
 
 
 const routes: Routes = [
@@ -23,7 +23,7 @@ const routes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'register', component: RegisterComponent },
   { path: 'photographer', component: PhotographerComponent },
-  { path: 'photographer-profile', component: PhotographerPerfilComponent },
+  { path: 'register-photographer', component: RegisterPhotographerComponent },
   { path: 'logout', component: HomeComponent },
   { path: 'message', component: MessageComponent },
   { path: 'profile', component: ProfileComponent },

@@ -18,9 +18,9 @@ import { PolicyPrivateComponent } from './components/policy-private/policy-priva
 import { AboutComponent } from './components/about/about.component';
 import { HeroComponent } from './components/hero/hero.component';
 import { MapComponent } from './components/map/map.component';
-import { PhotographerPerfilComponent } from './components/photographer-perfil/photographer-perfil.component';
 import { AgmCoreModule } from '@agm/core';
 import { ProfilePrivateComponent } from './components/profile-private/profile-private.component';
+import { RegisterPhotographerComponent } from './components/register-photographer/register-photographer.component';
 
 @NgModule({
   declarations: [
@@ -39,8 +39,8 @@ import { ProfilePrivateComponent } from './components/profile-private/profile-pr
     AboutComponent,
     HeroComponent,
     MapComponent,
-    PhotographerPerfilComponent,
     ProfilePrivateComponent,
+    RegisterPhotographerComponent,
 
   ],
   imports: [

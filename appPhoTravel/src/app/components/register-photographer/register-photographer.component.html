@@ -1,0 +1,24 @@
+<div class="container">
+    <div class="row">
+        <div class="col-8 offset-2">
+            <form [formGroup]="formulario" (ngSubmit)="onSubmit()">
+                <h2>Perfil Photographer</h2>
+
+                <div class="mb-3">
+                    <label class="form-label">Ubicación</label>
+                    <input class="form-control" type="text" formControlName="ubication">
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Web / RRSS</label>
+                    <input class="form-control" type="text" formControlName="web">
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Descripción</label>
+                    <textarea class="form-control" rows="10" cols="50" formControlName="description"></textarea>
+                </div>
+                <input type="submit" value="Guardar" class="btn btn-block btn-dark">
+            </form>
+
+        </div>
+    </div>
+</div>

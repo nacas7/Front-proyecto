@@ -1,5 +1,6 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Subject } from 'rxjs';
 
 
 
@@ -9,6 +10,7 @@ import { Injectable } from '@angular/core';
 export class PerfileService {
 
   baseUrl: string;
+
 
 
 
@@ -26,6 +28,9 @@ export class PerfileService {
     }
     return this.HttpClient.post<any>(`${this.baseUrl}/register`, formValue, httpOptions).toPromise()
   };
+
+
+
 
 
 
