@@ -1,7 +1,6 @@
 
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
-import { ActivatedRoute } from '@angular/router';
 import { UsuariosService } from 'src/app/usuarios.service';
 
 
@@ -13,10 +12,11 @@ import { UsuariosService } from 'src/app/usuarios.service';
 export class ProfileComponent implements OnInit {
 
   formulario: FormGroup;
-  idusuarios!: number;
+
+
   constructor(
     private usuariosServices: UsuariosService,
-    private activateRoute: ActivatedRoute
+
 
   ) {
 
@@ -29,18 +29,13 @@ export class ProfileComponent implements OnInit {
 
 
   ngOnInit(): void {
-    this.activateRoute.params.subscribe(async params => {
-      this.idusuarios = params.idusuarios;
-      const response = this.usuariosServices.getById(params.idusuarios)
 
-
-    })
   }
 
-
   async onUpDate() {
-    await this.usuariosServices.update(this.formulario.value, this.idusuarios!)
-    // this.formulario.reset()
+    console.log(this.formulario.value)
+    await this.usuariosServices.upData(this.formulario.value)
+    this.formulario.reset()
   }
 
 }

@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { PerfileService } from 'src/app/perfile.service';
+import { Photographer } from '../interface/interface.photographer';
+
 
 @Component({
   selector: 'app-photographer',
@@ -7,9 +10,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PhotographerComponent implements OnInit {
 
-  constructor() { }
+  photographer: Photographer[];
 
-  ngOnInit(): void {
+  constructor(
+    private perfilService: PerfileService
+  ) {
+    this.photographer = [];
+
+  }
+
+  async ngOnInit() {
+    this.photographer = await this.perfilService.getAll();
+
   }
 
 }

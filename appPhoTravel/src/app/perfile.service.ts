@@ -1,6 +1,6 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Subject } from 'rxjs';
+
 
 
 
@@ -11,12 +11,18 @@ export class PerfileService {
 
   baseUrl: string;
 
-
-
-
   constructor(private HttpClient: HttpClient) {
     this.baseUrl = 'http://localhost:3000/api/photographer-perfil'
 
+  }
+
+  getAll(): Promise<any> {
+    const httpOptions = {
+      headers: new HttpHeaders({
+        'Authorization': localStorage.getItem('token_photravel')!
+      })
+    }
+    return this.HttpClient.get<any>(`${this.baseUrl}`, httpOptions).toPromise()
   }
 
   register(formValue: any): Promise<any> {

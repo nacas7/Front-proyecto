@@ -1,0 +1,26 @@
+<div class="container">
+    <button class="btn btn-dark" (click)="mostrarParrafo()">{{activo ? 'mapa' : 'lista'}}</button>
+
+    <select>
+        <option value="0">Filtros</option>
+        <option value="1">Valoraciones</option>
+        <option value="2">Precio</option>
+    </select>
+</div>
+<div class="container">
+    <div class="row" *ngIf="activo">
+        <div class="col-12 col-sm-8 col-md-8 col-lg-4">
+            <app-map-photogtapers class="mapa"></app-map-photogtapers>
+        </div>
+        <div class="col-12 col-sm-12 col-md-12 col-lg-8">
+            <app-photographer></app-photographer>
+        </div>
+    </div>
+    <div class="row" *ngIf="!activo">
+        <div class="col-12 col-12">
+            <div>
+                <app-map></app-map>
+            </div>
+        </div>
+    </div>
+</div>

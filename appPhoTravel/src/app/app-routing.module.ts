@@ -12,6 +12,9 @@ import { NotFoundComponent } from './not-found/not-found.component';
 import { PhotographerComponent } from './components/photographer/photographer.component';
 import { ProfilePrivateComponent } from './components/profile-private/profile-private.component';
 import { RegisterPhotographerComponent } from './components/register-photographer/register-photographer.component';
+// import { PhotographerPerfileComponent } from './components/photographer-perfile/photographer-perfile.component';
+import { MapComponent } from './components/map/map.component';
+import { SearchComponent } from './components/search/search.component';
 
 
 const routes: Routes = [
@@ -23,11 +26,14 @@ const routes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'register', component: RegisterComponent },
   { path: 'photographer', component: PhotographerComponent },
+  // { path: 'photographer-profile', component: PhotographerPerfileComponent },
+  { path: 'search', component: SearchComponent },
   { path: 'register-photographer', component: RegisterPhotographerComponent },
   { path: 'logout', component: HomeComponent },
   { path: 'message', component: MessageComponent },
   { path: 'profile', component: ProfileComponent },
   { path: 'profile-private', component: ProfilePrivateComponent },
+  { path: 'map', component: MapComponent },
   { path: '**', component: NotFoundComponent }
 
 ];

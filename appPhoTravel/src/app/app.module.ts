@@ -21,6 +21,9 @@ import { MapComponent } from './components/map/map.component';
 import { AgmCoreModule } from '@agm/core';
 import { ProfilePrivateComponent } from './components/profile-private/profile-private.component';
 import { RegisterPhotographerComponent } from './components/register-photographer/register-photographer.component';
+import { PhotographerPerfileComponent } from './components/photographer-perfile/photographer-perfile.component';
+import { SearchComponent } from './components/search/search.component';
+import { MapPhotogtapersComponent } from './components/map-photogtapers/map-photogtapers.component';
 
 @NgModule({
   declarations: [
@@ -41,6 +44,9 @@ import { RegisterPhotographerComponent } from './components/register-photographe
     MapComponent,
     ProfilePrivateComponent,
     RegisterPhotographerComponent,
+    PhotographerPerfileComponent,
+    SearchComponent,
+    MapPhotogtapersComponent,
 
   ],
   imports: [

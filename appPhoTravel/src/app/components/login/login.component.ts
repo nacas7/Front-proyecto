@@ -35,7 +35,7 @@ export class LoginComponent implements OnInit {
       localStorage.setItem('token_photravel', response.token);
       alert('login correcto');
       this.UsuariosService.logged(true);
-      this.router.navigate(['/home']);
+      this.router.navigate(['/profile']);
 
     }
 

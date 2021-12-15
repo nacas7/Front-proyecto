@@ -15,7 +15,7 @@
                         <a class="nav-link" *ngIf="!isLogged" [routerLink]="['/login']">Sing in</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" *ngIf="isLogged" [routerLink]="['/photographer']">Photographer</a>
+                        <a class="nav-link" *ngIf="isLogged" [routerLink]="['/search']">Photographer</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" *ngIf="isLogged" (click)="onClickLogout()"

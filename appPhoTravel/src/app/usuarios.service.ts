@@ -16,8 +16,18 @@ export class UsuariosService {
     this.login$ = new Subject;
   }
 
-  register(formValue: any): Promise<any> {
+  getAll(): Promise<any> {
+    const httpOptions = {
+      headers: new HttpHeaders({
+        'Content-Type': 'application/json'
+      })
+    }
+    return this.HttpClient.get<any>(`${this.baseUrl}`, httpOptions).toPromise()
+  }
 
+
+
+  register(formValue: any): Promise<any> {
     const httpOptions = {
       headers: new HttpHeaders({
         'Content-Type': 'application/json'
@@ -43,17 +53,24 @@ export class UsuariosService {
     return this.login$.asObservable();
   }
 
-  getById(idusuarios: number): Promise<any> {
-    return this.HttpClient.get<any>(`${this.baseUrl}/${idusuarios}`).toPromise()
-  };
+  // getById(idusuarios: number): Promise<any> {
+  //   const httpOptions = {
+  //     headers: new HttpHeaders({
+  //       'Content-type': 'application/json'
+  //     })
+  //   }
 
-  update(idUsuarios: number, formValue: any): Promise<any> {
+  //   return this.HttpClient.get<any>(`${this.baseUrl}/${idusuarios}`, httpOptions).toPromise()
+  // };
+
+  upData(formValue: any): Promise<any> {
     const httpOptions = {
       headers: new HttpHeaders({
-        'Content-Type': 'application/json'
+        'Content-Type': 'application/json',
+
       })
     }
-    return this.HttpClient.put<any>(`${this.baseUrl}/${idUsuarios}`, formValue, httpOptions).toPromise()
+    return this.HttpClient.put<any>(`${this.baseUrl}/:clienteId`, formValue, httpOptions).toPromise()
   }
 
 

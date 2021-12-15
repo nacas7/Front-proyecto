@@ -1,16 +1,19 @@
 <div class="container">
     <div class="row">
-        <div class="col-12">
-            <div class="col-12 col-s-7" *ngFor="let user of photographer">
-                <h2 class="header">{{user.nombre}} {{user.apellidos}}</h2>
-                <div class="card horizontal">
+        <div class="col-4">
+            <!-- <app-map class="mapa"></app-map> -->
+        </div>
+        <div class="col-7">
+            <div class="col s12 m7">
+                <h2 class="header">{{photographer}}</h2>
+                <div class="card-horizontal">
                     <!-- <div class="card-image">
                         <img src="https://lorempixel.com/100/190/nature/6">
                     </div> -->
                     <div class="card-stacked">
                         <div class="card-content">
-                            <p>{{user.description}}</p>
-                            <p>Web: <a [href]="user.web" target="_blank">{{user.web}}</a></p>
+                            <p>Descripción</p>
+                            <p>Web</p>
                         </div>
                         <div class="card-action">
                             <a [routerLink]="['/message']" class="btn btn-dark">Contactar</a>
