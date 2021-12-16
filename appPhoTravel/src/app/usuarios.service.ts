@@ -26,8 +26,6 @@ export class UsuariosService {
     return this.HttpClient.get<any>(`${this.baseUrl}`, httpOptions).toPromise()
   }
 
-
-
   register(formValue: any): Promise<any> {
     const httpOptions = {
       headers: new HttpHeaders({
@@ -54,17 +52,15 @@ export class UsuariosService {
     return this.login$.asObservable();
   }
 
-  getById(idusuario: Photographer): Promise<Photographer> {
-    const httpOptions = {
-      headers: new HttpHeaders({
-        'Content-type': 'application/json'
-      })
-    }
+  // getById(idusuario: Photographer): Promise<any> {
+  //   const httpOptions = {
+  //     headers: new HttpHeaders({
+  //       'Content-type': 'application/json'
+  //     })
+  //   }
 
-    return this.HttpClient.get<any>(`${this.baseUrl}/${idusuario.idusuarios}`, httpOptions).toPromise()
-  };
-
-
+  //   return this.HttpClient.get<any>(`${this.baseUrl}/${idusuario.idusuarios}`, httpOptions).toPromise()
+  // };
 
   upDateById(idusuarios: number, formValue: any): Promise<any> {
     const httpOptions = {
@@ -73,7 +69,7 @@ export class UsuariosService {
 
       })
     }
-    return this.HttpClient.put<any>(`${this.baseUrl}/${idusuarios}`, formValue, httpOptions).toPromise()
+    return this.HttpClient.put<any>(`${this.baseUrl}/profile${idusuarios}`, formValue, httpOptions).toPromise()
   }
 
 

@@ -4,6 +4,7 @@ import { FormControl, FormGroup } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { PerfileService } from 'src/app/perfile.service';
 import { UsuariosService } from 'src/app/usuarios.service';
+import { Photographer } from '../interface/interface.photographer';
 
 
 @Component({
@@ -15,6 +16,7 @@ export class ProfileComponent implements OnInit {
 
   formulario: FormGroup;
   idUsuario?: number;
+  photographer: Photographer[];
 
 
   constructor(
@@ -25,6 +27,7 @@ export class ProfileComponent implements OnInit {
 
   ) {
 
+    this.photographer = []
     this.formulario = new FormGroup({
       nombre: new FormControl(),
       apellidos: new FormControl()
@@ -36,9 +39,9 @@ export class ProfileComponent implements OnInit {
   ngOnInit(): void {
     this.activatedRoute.params.subscribe(async params => {
       this.idUsuario = params.idusuario;
-      const response = await this.usuariosServices.getById(params.idusuario)
-      this.formulario.get('nombre')?.setValue(response.nombre);
-      this.formulario.get('apellidos')?.setValue(response.apellidos)
+      // const response = await this.usuariosServices.getById(params.idusuario)
+      // this.formulario.get('nombre')?.setValue(response.nombre);
+      // this.formulario.get('apellidos')?.setValue(response.apellidos)
     })
 
   }
@@ -52,5 +55,23 @@ export class ProfileComponent implements OnInit {
   async onSubmit() {
     this.formulario = await this.usuariosServices.upDateById(this.formulario.value, this.idUsuario)
   }
+  // onSubmit() {
+  //   let formdata = new FormData();
+  //   formdata.append('id', this.formulario.idusuarios);
+
+  //   formdata.append('nombre', this.formulario.value.nombre);
+  //   formdata.append('username', this.formulario.value.apellidos);
+  //   formdata.append('email', this.formulario.value.email);
+
+  //   this.usuariosServices
+  //     .upDateById(formdata)
+  //     .then((response) => {
+  //       if (response) {
+  //         this.router.navigate(['/home']);
+  //       }
+  //     })
+  //     .catch((err) => console.log(err));
+  // }
+
 
 }

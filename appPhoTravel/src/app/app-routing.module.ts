@@ -24,17 +24,16 @@ const routes: Routes = [
   { path: 'cookies', component: CookiesComponent },
   { path: 'policy-private', component: PolicyPrivateComponent },
   { path: 'login', component: LoginComponent },
+  { path: 'message', component: MessageComponent },
   { path: 'register', component: RegisterComponent },
   { path: 'photographer', component: PhotographerComponent },
-  { path: 'photographer-profile', component: PhotographerPerfileComponent },
+  { path: 'photographer-profile/:idusuario', component: PhotographerPerfileComponent },
   { path: 'search', component: SearchComponent },
-  { path: 'register-photographer', component: RegisterPhotographerComponent },
-  { path: 'logout', component: HomeComponent },
-  { path: 'message', component: MessageComponent },
   { path: 'profile', component: ProfileComponent },
-  { path: 'profile/edit/:idusuarios', component: ProfileComponent },
+  { path: 'register-photographer', component: RegisterPhotographerComponent },
   { path: 'profile-private', component: ProfilePrivateComponent },
   { path: 'map', component: MapComponent },
+  { path: 'logout', component: HomeComponent },
   { path: '**', component: NotFoundComponent }
 
 ];

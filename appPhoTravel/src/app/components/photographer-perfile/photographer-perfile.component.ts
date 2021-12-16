@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
 import { PerfileService } from 'src/app/perfile.service';
-import { UsuariosService } from 'src/app/usuarios.service';
 import { Photographer } from '../interface/interface.photographer';
 
 @Component({
@@ -10,17 +10,28 @@ import { Photographer } from '../interface/interface.photographer';
 })
 export class PhotographerPerfileComponent implements OnInit {
 
+  idusuario!: number;
   photographer: Photographer[];
-  constructor(private perfilService: PerfileService,
-    private usuarioService: UsuariosService
+
+  constructor(private perfileServices: PerfileService,
+    private activateRoute: ActivatedRoute, //referencia ruta activa
+    private router: Router
   ) {
-    this.photographer = []
-  }
-
-  ngOnInit() {
-    this.perfilService.getByInfo(this.photographer)
-
+    this.photographer = [];
 
   }
+
+  async ngOnInit() {
+    this.photographer = await this.perfileServices.getById(this.photographer);
+  }
+  // ngOnInit(): void {
+  //   this.activateRoute.params.subscribe((value) => {
+  //     this.idusuario = value.idusuario
+  //   });
+
+
+
+  // }
+
 
 }
