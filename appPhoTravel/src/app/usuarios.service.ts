@@ -1,6 +1,7 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Subject } from 'rxjs';
+import { Photographer } from './components/interface/interface.photographer';
 
 
 @Injectable({
@@ -53,24 +54,26 @@ export class UsuariosService {
     return this.login$.asObservable();
   }
 
-  // getById(idusuarios: number): Promise<any> {
-  //   const httpOptions = {
-  //     headers: new HttpHeaders({
-  //       'Content-type': 'application/json'
-  //     })
-  //   }
+  getById(idusuario: Photographer): Promise<any> {
+    const httpOptions = {
+      headers: new HttpHeaders({
+        'Content-type': 'application/json'
+      })
+    }
 
-  //   return this.HttpClient.get<any>(`${this.baseUrl}/${idusuarios}`, httpOptions).toPromise()
-  // };
+    return this.HttpClient.get<any>(`${this.baseUrl}/${idusuario.idusuarios}`, httpOptions).toPromise()
+  };
 
-  upData(formValue: any): Promise<any> {
+
+
+  upDate(idusuarios: number, formValue: any): Promise<any> {
     const httpOptions = {
       headers: new HttpHeaders({
         'Content-Type': 'application/json',
 
       })
     }
-    return this.HttpClient.put<any>(`${this.baseUrl}/:clienteId`, formValue, httpOptions).toPromise()
+    return this.HttpClient.put<any>(`${this.baseUrl}/${idusuarios}`, formValue, httpOptions).toPromise()
   }
 
 

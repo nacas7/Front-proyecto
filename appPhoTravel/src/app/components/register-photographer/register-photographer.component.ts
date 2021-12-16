@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { PerfileService } from 'src/app/perfile.service';
 import { FormControl, FormGroup } from '@angular/forms';
+import { Photographer } from '../interface/interface.photographer';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-register-photographer',
@@ -10,7 +12,12 @@ import { FormControl, FormGroup } from '@angular/forms';
 export class RegisterPhotographerComponent implements OnInit {
 
   formulario: FormGroup;
-  constructor(private prefileServices: PerfileService) {
+  photographer!: Photographer;
+
+  constructor(
+    private prefileServices: PerfileService,
+    private router: Router
+  ) {
     this.formulario = new FormGroup({
       ubication: new FormControl(),
       web: new FormControl(),
@@ -19,7 +26,8 @@ export class RegisterPhotographerComponent implements OnInit {
     })
   }
 
-  ngOnInit(): void {
+  ngOnInit() {
+
   }
 
   async onSubmit() {
@@ -27,5 +35,11 @@ export class RegisterPhotographerComponent implements OnInit {
     this.formulario.reset()
 
   };
+
+  delete(idusuario: number) {
+    this.prefileServices.deleteById(idusuario)
+
+
+  }
 
 }

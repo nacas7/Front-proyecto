@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { Component, NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AboutComponent } from './components/about/about.component';
 import { CookiesComponent } from './components/cookies/cookies.component';
@@ -32,6 +32,7 @@ const routes: Routes = [
   { path: 'logout', component: HomeComponent },
   { path: 'message', component: MessageComponent },
   { path: 'profile', component: ProfileComponent },
+  { path: 'profile/edit/:idusuarios', component: ProfileComponent },
   { path: 'profile-private', component: ProfilePrivateComponent },
   { path: 'map', component: MapComponent },
   { path: '**', component: NotFoundComponent }
