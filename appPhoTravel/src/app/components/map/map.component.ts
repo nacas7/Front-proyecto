@@ -1,6 +1,8 @@
 
 import { Component, OnInit, ViewChild, ElementRef, NgZone } from '@angular/core';
-import { MapsAPILoader, MouseEvent } from '@agm/core';
+import { AgmInfoWindow, MapsAPILoader, MouseEvent } from '@agm/core';
+import { Photographer } from '../interface/interface.photographer';
+import { PerfileService } from 'src/app/perfile.service';
 
 
 @Component({
@@ -15,7 +17,9 @@ export class MapComponent implements OnInit {
   zoom!: number;
   mapTypeId!: string;
   address!: string;
+  photographers: Photographer[] = [];
   private geoCoder: any;
+  previous!: AgmInfoWindow;
 
   @ViewChild('search')
   private searchElementRef!: ElementRef;
@@ -24,14 +28,27 @@ export class MapComponent implements OnInit {
 
   constructor(
     private mapsAPILoader: MapsAPILoader,
-    private ngZone: NgZone
+    private ngZone: NgZone,
+    private perfilseService: PerfileService
 
 
   ) {
 
   }
 
-  ngOnInit() {
+  async ngOnInit() {
+
+
+    this.photographers = await this.perfilseService.getAll();
+
+    this.photographers.map(async photographer => {
+      let address = photographer.ubication
+      let response = await this.perfilseService.getLocation(address)
+      photographer.lat = response.results[0].geometry.location.lat
+      photographer.long = response.results[0].geometry.location.lng
+    })
+
+
 
     this.mapsAPILoader.load().then(() => {
       this.setCurrentLocation();
@@ -91,7 +108,15 @@ export class MapComponent implements OnInit {
       }
 
     });
+  };
+
+  clickedMarker(infoWindow: AgmInfoWindow) {
+    if (this.previous) {
+      this.previous.close();
+    }
+    this.previous = infoWindow;
   }
+
 
 
 }

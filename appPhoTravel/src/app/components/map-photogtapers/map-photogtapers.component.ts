@@ -1,5 +1,7 @@
 import { Component, OnInit, ViewChild, ElementRef, NgZone } from '@angular/core';
 import { MapsAPILoader, MouseEvent } from '@agm/core';
+import { Photographer } from '../interface/interface.photographer';
+import { PerfileService } from 'src/app/perfile.service';
 
 @Component({
   selector: 'app-map-photogtapers',
@@ -13,6 +15,7 @@ export class MapPhotogtapersComponent implements OnInit {
   zoom!: number;
   mapTypeId!: string;
   address!: string;
+  photographers: Photographer[] = [];
   private geoCoder: any;
 
   @ViewChild('search')
@@ -20,14 +23,23 @@ export class MapPhotogtapersComponent implements OnInit {
 
   constructor(
     private mapsAPILoader: MapsAPILoader,
-    private ngZone: NgZone
-
+    private ngZone: NgZone,
+    private perfileService: PerfileService
 
   ) {
 
   }
 
-  ngOnInit() {
+  async ngOnInit() {
+
+    this.photographers = await this.perfileService.getAll();
+
+    this.photographers.map(async photographer => {
+      let address = photographer.ubication
+      let response = await this.perfileService.getLocation(address)
+      photographer.lat = response.results[0].geometry.location.lat
+      photographer.long = response.results[0].geometry.location.lng
+    })
 
     this.mapsAPILoader.load().then(() => {
       this.setCurrentLocation();

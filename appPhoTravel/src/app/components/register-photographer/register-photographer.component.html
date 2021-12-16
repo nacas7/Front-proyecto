@@ -4,9 +4,11 @@
             <form [formGroup]="formulario" (ngSubmit)="onSubmit()">
                 <h2>Perfil Photographer</h2>
                 <div>
-                    <div class="mb-3">
+                    <div class="mb-3" ng-controller="MapCtrl">
                         <label class="form-label">Ubicación</label>
-                        <input class="form-control" type="text" formControlName="ubication">
+                        <input class="form-control" type="text" formControlName="ubication"
+                            placeholder="Calle, localización ,CP">
+
                     </div>
                     <div class="mb-3">
                         <label class="form-label">Web / RRSS</label>

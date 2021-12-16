@@ -44,6 +44,10 @@ export class PerfileService {
     return this.HttpClient.delete(`${this.baseUrl}/profile${idusuarios}`, httpOptions).toPromise()
   }
 
+  getLocation(pAddress: string): Promise<any> {
+    return this.HttpClient.get(`https://maps.googleapis.com/maps/api/geocode/json?key=AIzaSyBMOcTcAkobrlfKIBOJNz6lDw2R5fJsk_Q&address=${pAddress}`).toPromise()
+  }
+
 
 
 
