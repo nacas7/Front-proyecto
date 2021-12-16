@@ -25,6 +25,18 @@ export class PerfileService {
     return this.HttpClient.get<any>(`${this.baseUrl}`, httpOptions).toPromise()
   };
 
+  getByInfo(idusuarios: number): Promise<any> {
+    const httpOptions = {
+      headers: new HttpHeaders({
+        'Authorization': localStorage.getItem('token_photravel')!
+      })
+
+    }
+    return this.HttpClient.get<any>(`${this.baseUrl}/${idusuarios}`, httpOptions).toPromise()
+  }
+
+
+
   register(formValue: any): Promise<any> {
     console.log(formValue)
     const httpOptions = {

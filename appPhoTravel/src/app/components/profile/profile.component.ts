@@ -2,6 +2,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
+import { PerfileService } from 'src/app/perfile.service';
 import { UsuariosService } from 'src/app/usuarios.service';
 
 
@@ -13,7 +14,7 @@ import { UsuariosService } from 'src/app/usuarios.service';
 export class ProfileComponent implements OnInit {
 
   formulario: FormGroup;
-  idusuario?: number;
+  idUsuario?: number;
 
 
   constructor(
@@ -34,7 +35,7 @@ export class ProfileComponent implements OnInit {
 
   ngOnInit(): void {
     this.activatedRoute.params.subscribe(async params => {
-      this.idusuario = params.idusuario;
+      this.idUsuario = params.idusuario;
       const response = await this.usuariosServices.getById(params.idusuario)
       this.formulario.get('nombre')?.setValue(response.nombre);
       this.formulario.get('apellidos')?.setValue(response.apellidos)
@@ -48,8 +49,8 @@ export class ProfileComponent implements OnInit {
   //   this.formulario.reset()
   // }
 
-  async upDate() {
-    this.formulario = await this.usuariosServices.upDate(this.formulario.value, this.idusuario)
+  async onSubmit() {
+    this.formulario = await this.usuariosServices.upDateById(this.formulario.value, this.idUsuario)
   }
 
 }

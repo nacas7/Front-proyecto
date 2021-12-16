@@ -54,7 +54,7 @@ export class UsuariosService {
     return this.login$.asObservable();
   }
 
-  getById(idusuario: Photographer): Promise<any> {
+  getById(idusuario: Photographer): Promise<Photographer> {
     const httpOptions = {
       headers: new HttpHeaders({
         'Content-type': 'application/json'
@@ -66,7 +66,7 @@ export class UsuariosService {
 
 
 
-  upDate(idusuarios: number, formValue: any): Promise<any> {
+  upDateById(idusuarios: number, formValue: any): Promise<any> {
     const httpOptions = {
       headers: new HttpHeaders({
         'Content-Type': 'application/json',

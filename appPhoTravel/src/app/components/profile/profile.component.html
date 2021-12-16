@@ -7,7 +7,7 @@
         <div class="col-8 offset-2">
             <h4>Perfil</h4>
             <h6>Información pública</h6>
-            <form [formGroup]="formulario">
+            <form [formGroup]="formulario" (ngSubmit)="onSubmit()">
                 <!-- <div class="mb-3">
                     <label class="form-label">Foto principal</label>
                     <input class="form-control" type="text" formControlName="username">
@@ -20,7 +20,7 @@
                     <label class="form-label">Apellidos</label>
                     <input class="form-control" type="text" formControlName="apellidos">
                 </div>
-                <input type="submit" value="Actualizar datos" (click)="upDate()" class="btn btn-block btn-dark">
+                <input type="submit" value="Actualizar datos" class="btn btn-block btn-dark">
                 <input type="button" value="Photographer" class="btn btn-block btn-dark"
                     [routerLink]="['/register-photographer']" />
             </form>

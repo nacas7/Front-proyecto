@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { PerfileService } from 'src/app/perfile.service';
+import { UsuariosService } from 'src/app/usuarios.service';
 import { Photographer } from '../interface/interface.photographer';
 
 @Component({
@@ -10,13 +11,16 @@ import { Photographer } from '../interface/interface.photographer';
 export class PhotographerPerfileComponent implements OnInit {
 
   photographer: Photographer[];
-  constructor(private perfilService: PerfileService) {
+  constructor(private perfilService: PerfileService,
+    private usuarioService: UsuariosService
+  ) {
     this.photographer = []
   }
 
-  async ngOnInit() {
-    const response = await this.perfilService.getAll();
-    this.photographer = response;
+  ngOnInit() {
+    this.perfilService.getByInfo(this.photographer)
+
+
   }
 
 }
