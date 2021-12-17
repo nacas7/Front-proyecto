@@ -6,11 +6,16 @@
     </div>
     <div class="row col-10 col-md-4 offset-md-3">
         <agm-map [latitude]="lat" [longitude]="lng" [zoom]="zoom">
-            <agm-marker [latitude]="lat" [longitude]="lng" [markerDraggable]="true" (dragEnd)="markerDragEnd($event)">
-            </agm-marker>
+            <!-- <agm-marker [latitude]="lat" [longitude]="lng" [markerDraggable]="true" (dragEnd)="markerDragEnd($event)">
+            </agm-marker> -->
 
             <agm-marker *ngFor="let photographer of photographers" [latitude]="photographer.lat"
                 [longitude]="photographer.long">
+                <agm-info-window>
+                    <div>
+                        <app-photographer-perfile></app-photographer-perfile>
+                    </div>
+                </agm-info-window>
             </agm-marker>
         </agm-map>
     </div>

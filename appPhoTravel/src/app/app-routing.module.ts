@@ -15,6 +15,7 @@ import { RegisterPhotographerComponent } from './components/register-photographe
 import { PhotographerPerfileComponent } from './components/photographer-perfile/photographer-perfile.component';
 import { MapComponent } from './components/map/map.component';
 import { SearchComponent } from './components/search/search.component';
+import { LoginGuard } from './guards/login.guard';
 
 
 const routes: Routes = [
@@ -24,15 +25,49 @@ const routes: Routes = [
   { path: 'cookies', component: CookiesComponent },
   { path: 'policy-private', component: PolicyPrivateComponent },
   { path: 'login', component: LoginComponent },
-  { path: 'message', component: MessageComponent },
   { path: 'register', component: RegisterComponent },
-  { path: 'photographer', component: PhotographerComponent },
-  { path: 'photographer-profile/:idusuario', component: PhotographerPerfileComponent },
-  { path: 'search', component: SearchComponent },
-  { path: 'profile', component: ProfileComponent },
-  { path: 'register-photographer', component: RegisterPhotographerComponent },
-  { path: 'profile-private', component: ProfilePrivateComponent },
+  {
+    path: 'photographer',
+    component: PhotographerComponent,
+    canActivate: [LoginGuard]
+
+  },
+  {
+    path: 'photographer-profile/:idusuario',
+    component: PhotographerPerfileComponent,
+    canActivate: [LoginGuard]
+
+  },
+  {
+    path: 'search',
+    component: SearchComponent,
+    canActivate: [LoginGuard]
+  },
+  {
+    path: 'profile',
+    component: ProfileComponent,
+    canActivate: [LoginGuard]
+
+  },
+  {
+    path: 'register-photographer',
+    component: RegisterPhotographerComponent,
+    canActivate: [LoginGuard]
+
+  },
+  {
+    path: 'profile-private',
+    component: ProfilePrivateComponent,
+    canActivate: [LoginGuard]
+
+  },
   { path: 'map', component: MapComponent },
+  {
+    path: 'message',
+    component: MessageComponent,
+    canActivate: [LoginGuard]
+
+  },
   { path: 'logout', component: HomeComponent },
   { path: '**', component: NotFoundComponent }
 

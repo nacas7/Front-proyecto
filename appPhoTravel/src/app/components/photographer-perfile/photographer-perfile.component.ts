@@ -11,27 +11,22 @@ import { Photographer } from '../interface/interface.photographer';
 export class PhotographerPerfileComponent implements OnInit {
 
   idusuario!: number;
-  photographer: Photographer[];
+  photographer!: Photographer;
 
   constructor(private perfileServices: PerfileService,
     private activateRoute: ActivatedRoute, //referencia ruta activa
     private router: Router
   ) {
-    this.photographer = [];
 
   }
 
   async ngOnInit() {
-    this.photographer = await this.perfileServices.getById(this.photographer);
+    this.activateRoute.params.subscribe(async params => {
+
+      let response = await this.perfileServices.getById(Number(params.idusuario));
+      this.photographer = response[0]
+    })
   }
-  // ngOnInit(): void {
-  //   this.activateRoute.params.subscribe((value) => {
-  //     this.idusuario = value.idusuario
-  //   });
-
-
-
-  // }
 
 
 }
