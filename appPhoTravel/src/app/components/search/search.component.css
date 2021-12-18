@@ -1,0 +1,17 @@
+#map iframe{
+    width: 100px !important;
+    height: 100px !important;
+}
+
+
+@media screen and (min-width: 1200px) {
+    .maps{
+        width:600px;
+    }
+}
+@media screen and (max-width: 320px) {
+        .maps{
+            width:160px;
+        }
+    }
+    

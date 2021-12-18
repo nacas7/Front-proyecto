@@ -16,6 +16,12 @@ export class AllPhotographersService {
     return this.HttpClient.get<any>(`${this.baseUrl}`).toPromise()
   }
 
+  getById(idusuario: any): Promise<any> {
+    return this.HttpClient.get<any>(`${this.baseUrl}/${idusuario}`).toPromise()
+
+  }
+
+
 
   getLocation(pAddress: string): Promise<any> {
     return this.HttpClient.get(`https://maps.googleapis.com/maps/api/geocode/json?key=AIzaSyBMOcTcAkobrlfKIBOJNz6lDw2R5fJsk_Q&address=${pAddress}`).toPromise()

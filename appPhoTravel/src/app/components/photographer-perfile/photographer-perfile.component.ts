@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { AllPhotographersService } from 'src/app/all-photographers.service';
 import { PerfileService } from 'src/app/perfile.service';
+
 import { Photographer } from '../interface/interface.photographer';
 
 @Component({
@@ -13,7 +15,7 @@ export class PhotographerPerfileComponent implements OnInit {
   idusuario!: number;
   photographer!: Photographer;
 
-  constructor(private perfileServices: PerfileService,
+  constructor(private perfilServeices: PerfileService,
     private activateRoute: ActivatedRoute, //referencia ruta activa
     private router: Router
   ) {
@@ -23,7 +25,7 @@ export class PhotographerPerfileComponent implements OnInit {
   async ngOnInit() {
     this.activateRoute.params.subscribe(async params => {
 
-      let response = await this.perfileServices.getById(Number(params.idusuario));
+      let response = await this.perfilServeices.getById(Number(params.idusuario));
       this.photographer = response[0]
     })
   }

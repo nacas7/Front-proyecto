@@ -18,6 +18,7 @@ import { SearchComponent } from './components/search/search.component';
 import { LoginGuard } from './guards/login.guard';
 
 
+
 const routes: Routes = [
   { path: '', pathMatch: 'full', redirectTo: '/home' },
   { path: 'home', component: HomeComponent },
@@ -36,6 +37,7 @@ const routes: Routes = [
     path: 'photographer-profile/:idusuario',
     component: PhotographerPerfileComponent,
     canActivate: [LoginGuard]
+
 
   },
   {

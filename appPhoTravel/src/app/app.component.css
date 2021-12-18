@@ -1,6 +1,22 @@
-app-footer{
-    width: 100%;
-    position: absolute;
-    bottom: 0;
-    left: 0;
+main{
+     min-height: 100vh;
+      position: relative;
+    z-index: 1;
+    margin-bottom:10px;
 }
+app-footer{
+    position: sticky;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+   background: #252a47;
+  display: grid;
+  place-items: center;
+  margin-top: -58px;
+
+}
+body {
+   
+     overflow-x: scroll;
+    height: 100%;
+  overflow: hidden; }

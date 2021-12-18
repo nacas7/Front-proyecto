@@ -1,0 +1,27 @@
+.row{
+    padding-top: 20px;
+
+}
+.col-4{
+    border: 1px solid black;
+    height: auto;
+    color: wheat;
+}
+.col-8{
+    border: 1px solid black;
+    height: auto;
+    position: relative;
+}
+h3{
+    width: 100%;
+    background-color: black;
+}
+input{
+    width: 100%;
+    border-radius: 10px;
+   
+}
+.enviar{
+    position: absolute;
+   bottom: 10%;
+}
