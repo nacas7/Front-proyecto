@@ -2,7 +2,6 @@
 import { Component, OnInit, ViewChild, ElementRef, NgZone } from '@angular/core';
 import { AgmInfoWindow, MapsAPILoader, MouseEvent } from '@agm/core';
 import { Photographer } from '../interface/interface.photographer';
-import { PerfileService } from 'src/app/perfile.service';
 import { AllPhotographersService } from 'src/app/all-photographers.service';
 
 
@@ -30,7 +29,7 @@ export class MapComponent implements OnInit {
   constructor(
     private mapsAPILoader: MapsAPILoader,
     private ngZone: NgZone,
-    private perfileServices: PerfileService
+    private allPhotographer: AllPhotographersService
 
 
   ) {
@@ -40,11 +39,11 @@ export class MapComponent implements OnInit {
   async ngOnInit() {
 
 
-    this.photographers = await this.perfileServices.getAll();
+    this.photographers = await this.allPhotographer.getAll();
 
     this.photographers.map(async photographer => {
       let address = photographer.ubication
-      let response = await this.perfileServices.getLocation(address)
+      let response = await this.allPhotographer.getLocation(address)
       photographer.lat = response.results[0].geometry.location.lat
       photographer.long = response.results[0].geometry.location.lng
     })
