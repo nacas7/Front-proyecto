@@ -12,9 +12,11 @@
                             <p>{{photographer.description}}</p>
                             <p>Web: <a [href]="photographer.web" target="_blank">{{photographer.web}}</a></p>
                         </div>
-                        <div class="card-action">
-                            <a [routerLink]="['/message/', photographer.idphotographer]"
-                                class="btn btn-dark">Contactar</a>
+                        <div>
+                            <div class="card-action">
+                                <a [routerLink]="['/message/', photographer.idphotographer]" class="btn btn-dark"
+                                    *ngIf="isLogged">Contactar</a>
+                            </div>
                         </div>
                     </div>
                 </div>

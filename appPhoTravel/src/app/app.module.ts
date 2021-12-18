@@ -27,6 +27,8 @@ import { MapPhotogtapersComponent } from './components/map-photogtapers/map-phot
 
 
 
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -49,6 +51,8 @@ import { MapPhotogtapersComponent } from './components/map-photogtapers/map-phot
     PhotographerPerfileComponent,
     SearchComponent,
     MapPhotogtapersComponent,
+
+
 
 
 
