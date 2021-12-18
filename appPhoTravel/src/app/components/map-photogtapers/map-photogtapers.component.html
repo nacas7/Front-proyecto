@@ -12,7 +12,8 @@
             <agm-marker *ngFor="let photographer of photographers" [latitude]="photographer.lat"
                 [longitude]="photographer.long">
                 <agm-info-window>
-                    <div class="container">
+                    <app-photographer-perfile [photographer]="photographer"></app-photographer-perfile>
+                    <!-- <div class="container">
                         <div class="row">
                             <div class="col-7">
                                 <div class="col s12 m7">
@@ -28,14 +29,15 @@
                                                         target="_blank">{{photographer.web}}</a></p>
                                             </div>
                                             <div class="card-action">
-                                                <a [routerLink]="['/message']" class="btn btn-dark">Contactar</a>
+                                                <a [routerLink]="['/message/', photographer.idusuarios]"
+                                                    class="btn btn-dark">Contactar</a>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    </div> -->
                 </agm-info-window>
             </agm-marker>
         </agm-map>

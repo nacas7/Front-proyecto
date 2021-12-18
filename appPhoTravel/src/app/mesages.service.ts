@@ -11,6 +11,7 @@ export class MesagesService {
     this.baseUrl = "http://localhost:3000/api/chat"
   }
 
+  //creo el mensaje
   createMessage(formValue: any): Promise<any> {
     const httpOptions = {
       headers: new HttpHeaders({
@@ -31,7 +32,7 @@ export class MesagesService {
     return this.HttpClient.get<any>(`${this.baseUrl}/message`, httpOptions).toPromise()
   }
 
-  //recupero todos los mensajes que envia el usuario
+  //recupero todos los mensajes que recibe un usuario
   getAllBy(): Promise<any> {
     const httpOptions = {
       headers: new HttpHeaders({

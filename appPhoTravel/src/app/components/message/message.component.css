@@ -41,23 +41,23 @@ input{
     min-width: 250px;
     display: flex;
 }
-.col-1{
+/* .columna-1{
     flex:1;
-}
-.col-2{
-    flex-basis:250px;
+} */
+.columna-2{
+
     background:#3874c9;
 }
 .msg-row{
-    display:flex;
-    align-items: center;
+    /* display:flex;
+    align-items: center; */
     margin: 40px;
 }
 .msg-text{
     background:rgba(255, 255, 255, 0.1);
     padding:20px 40px;
     border-radius: 8px;
-    flex-basis: 70%;
+    /* flex-basis: 70%; */
     font-weight: 300;
 }
 .msg-text h2{
@@ -70,10 +70,10 @@ input{
     border-radius: 50%;
     margin: 0 20px;
 } */
-.msg-row2{
+/* .msg-row2{
     justify-content: flex-end;
-}
-.col-1 input{
+} */
+.columna-1 input{
     border: 0;
     outline: none;
     padding: 20px 40px;
@@ -82,4 +82,34 @@ input{
     width: 100%;
     font-size: 16px;
     font-weight: 300;
+}
+#btn{
+    background-color: black !important;
+    color: white;
+}
+::placeholder{
+    color: #fff;
+}
+.columna-2 h3{
+    text-align: center;
+    margin-top: 40px;
+    font-weight: 400;
+}
+.columna-2 ul{
+    list-style: none;
+    padding: 30px;
+}
+.columna-2 ul li{
+padding: 5px 0;
+}
+/* .col-2 ul li::before{
+content: '';
+width: 10px;
+height: 10px;
+background: red;
+display: inline-block;
+margin-right: 10px;
+} */
+.col-2 ul li:hover{
+    background:#1967d3 ;
 }

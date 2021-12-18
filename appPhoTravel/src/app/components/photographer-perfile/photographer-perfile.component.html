@@ -13,7 +13,8 @@
                             <p>Web: <a [href]="photographer.web" target="_blank">{{photographer.web}}</a></p>
                         </div>
                         <div class="card-action">
-                            <a [routerLink]="['/message']" class="btn btn-dark">Contactar</a>
+                            <a [routerLink]="['/message/', photographer.idphotographer]"
+                                class="btn btn-dark">Contactar</a>
                         </div>
                     </div>
                 </div>

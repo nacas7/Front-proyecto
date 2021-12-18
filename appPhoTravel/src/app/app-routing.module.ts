@@ -70,6 +70,12 @@ const routes: Routes = [
     canActivate: [LoginGuard]
 
   },
+  {
+    path: 'message/:photographerId',
+    component: MessageComponent,
+    canActivate: [LoginGuard]
+
+  },
   { path: 'logout', component: HomeComponent },
   { path: '**', component: NotFoundComponent }
 

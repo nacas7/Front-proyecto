@@ -22,28 +22,43 @@
 
 <div class="container">
     <div class="chat">
-        <div class="col-1">
-            <div class="msg-row">
-                <div class="msg-text">
-                    <h2>Natalia Casilda</h2>
-                    <p>Hola que pasa</p>
-                    <!-- <div>
+
+        <div class="row">
+            <div class="columna-1 col-8" *ngIf="idphotographer">
+                <div class="msg-row">
+                    <div class="msg-text">
+                        <!-- <h2>Natalia Casilda</h2> -->
+                        <p>Hola que pasa</p>
+                        <!-- <div>
                         <img src="" alt="" class="msg-img">
                     </div> -->
+                    </div>
                 </div>
-            </div>
-            <div class="msg-row msg-row2">
-                <div class="msg-text">
-                    <h2>Marina Casilda</h2>
-                    <p>Hola que pasa</p>
-                    <!-- <div>
+                <div class="msg-row msg-row2 ">
+                    <div class="msg-text">
+                        <!-- <h2>Marina Casilda</h2> -->
+                        <p>Hola que pasa</p>
+                        <!-- <div>
                         <img src="" alt="" class="msg-img">
                     </div> -->
+                    </div>
                 </div>
+                <form [formGroup]="formulario" (ngSubmit)="onSubmit()">
+                    <div class="enviar">
+                        <input type="text" cols="30" rows="10" placeholder="Escribe el mensaje"
+                            formControlName="message" />
+                        <input type="submit" value="Enviar" id="btn" class="btn btn-dark">
+                    </div>
+                </form>
             </div>
-            <input type="text" placeholder="Escribe el mensaje" />
+            <div class="columna-2 col-4">
+                <h3>Chat</h3>
+                <ul>
+                    <li *ngFor="let message of mensajesRecibidos">{{message | json }}</li>
+                </ul>
+            </div>
         </div>
-        <div class="col-2"></div>
+
     </div>
 
 </div>
