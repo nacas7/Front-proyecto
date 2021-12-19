@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 import { PerfileService } from 'src/app/perfile.service';
 import { Photographer } from '../interface/interface.photographer';
 
@@ -10,17 +11,20 @@ import { Photographer } from '../interface/interface.photographer';
 })
 export class PhotographerComponent implements OnInit {
 
-  photographer: Photographer[];
+  filterCity = '';
+  photographers: Photographer[];
+  @Input() photographer!: Photographer;
 
   constructor(
-    private perfilService: PerfileService
+    private perfilService: PerfileService,
+    private activateRoute: ActivatedRoute
   ) {
-    this.photographer = [];
+    this.photographers = [];
 
   }
 
   async ngOnInit() {
-    this.photographer = await this.perfilService.getAll();
+    this.photographers = await this.perfilService.getAll();
 
   }
 

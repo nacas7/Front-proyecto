@@ -25,20 +25,31 @@ input{
     position: absolute;
    bottom: 10%;
 } */
+#mensajes{
+    min-width:300px;
+  min-height:40px;
+  display:block;
+  color:white;
+  margin:5px;
+  background:blue;
+}
+.mensajes{
+    color : #ffffff;
+    padding : 4px;
+    height : 600px;
+    overflow : auto; 
+}
 .container{
-    background-image: linear-gradient(to right, #1c00f2, #453f96);
     display: flex;
     align-items: center;
     justify-content: center;
     color: #fff;
-    width: 100%;
-    height: 100vh;
-
 }
 .chat{
     background: #1d61c2;
-    width: 60%;
-    min-width: 250px;
+    width: 100%;
+    /* min-width: 250px; */
+    height: 100vh;
     display: flex;
 }
 /* .columna-1{
@@ -57,7 +68,7 @@ input{
     background:rgba(255, 255, 255, 0.1);
     padding:20px 40px;
     border-radius: 8px;
-    /* flex-basis: 70%; */
+ 
     font-weight: 300;
 }
 .msg-text h2{
@@ -65,14 +76,6 @@ input{
     font-size: 22px;
     margin-bottom: 10px;
 }
-/* .msg-img{
-    width: 50px;
-    border-radius: 50%;
-    margin: 0 20px;
-} */
-/* .msg-row2{
-    justify-content: flex-end;
-} */
 .columna-1 input{
     border: 0;
     outline: none;
@@ -86,6 +89,8 @@ input{
 #btn{
     background-color: black !important;
     color: white;
+    
+  
 }
 ::placeholder{
     color: #fff;
@@ -102,14 +107,13 @@ input{
 .columna-2 ul li{
 padding: 5px 0;
 }
-/* .col-2 ul li::before{
-content: '';
-width: 10px;
-height: 10px;
-background: red;
-display: inline-block;
-margin-right: 10px;
-} */
 .col-2 ul li:hover{
     background:#1967d3 ;
 }
+form{
+    position: absolute;
+    width: 58%;
+    bottom: 0;
+}
+
+

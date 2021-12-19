@@ -1,7 +1,9 @@
 <div class="container">
     <div class="row">
         <div class="col-12">
-            <div class="col-12 col-s-7" *ngFor="let user of photographer">
+            <input placeholder="Filtra por ciudad" type="text" class="form-control" name="filterCity"
+                [(ngModel)]="filterCity" />
+            <div class="col-12 col-s-7" *ngFor="let user of photographers | filter: filterCity">
                 <h2 class="header">{{user.nombre}} {{user.apellidos}}</h2>
                 <div class="card horizontal">
                     <!-- <div class="card-image">
@@ -11,9 +13,10 @@
                         <div class="card-content">
                             <p>{{user.description}}</p>
                             <p>Web: <a [href]="user.web" target="_blank">{{user.web}}</a></p>
+                            <p>Ubicación: {{user.ubication}}</p>
                         </div>
                         <div class="card-action">
-                            <a [routerLink]="['/message']" class="btn btn-dark">Contactar</a>
+                            <a [routerLink]="['/message/', user.idphotographer]" class="btn btn-dark">Contactar</a>
                         </div>
                     </div>
                 </div>

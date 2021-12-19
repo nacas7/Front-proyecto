@@ -24,6 +24,8 @@ import { RegisterPhotographerComponent } from './components/register-photographe
 import { PhotographerPerfileComponent } from './components/photographer-perfile/photographer-perfile.component';
 import { SearchComponent } from './components/search/search.component';
 import { MapPhotogtapersComponent } from './components/map-photogtapers/map-photogtapers.component';
+import { FormsModule } from '@angular/forms';
+import { FilterPipe } from './filter.pipe';
 
 
 
@@ -51,11 +53,7 @@ import { MapPhotogtapersComponent } from './components/map-photogtapers/map-phot
     PhotographerPerfileComponent,
     SearchComponent,
     MapPhotogtapersComponent,
-
-
-
-
-
+    FilterPipe,
 
   ],
   imports: [
@@ -63,6 +61,7 @@ import { MapPhotogtapersComponent } from './components/map-photogtapers/map-phot
     AppRoutingModule,
     HttpClientModule,
     ReactiveFormsModule,
+    FormsModule,
     AgmCoreModule.forRoot({
       apiKey: 'AIzaSyBMOcTcAkobrlfKIBOJNz6lDw2R5fJsk_Q',
       libraries: ['places']

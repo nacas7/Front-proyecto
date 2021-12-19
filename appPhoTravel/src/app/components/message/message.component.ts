@@ -12,9 +12,10 @@ import { Photographer } from '../interface/interface.photographer';
 export class MessageComponent implements OnInit {
 
   mensajesRecibidos: any;
-  usuarioRecibe!: Photographer;
+  usuarioRecibe!: any;
   message!: string;
   idphotographer: string = '';
+  idusuario: string = '';
   formulario: FormGroup
   constructor(
     private messageService: MesagesService,
@@ -25,6 +26,10 @@ export class MessageComponent implements OnInit {
     })
     this.activaredRoute.params.subscribe((params) => {
       this.idphotographer = params.photographerId;
+
+      // this.activaredRoute.params.subscribe((params) => {
+      //   this.idusuario = params.photographerId
+      // })
     })
   }
 
@@ -33,17 +38,24 @@ export class MessageComponent implements OnInit {
 
   async ngOnInit() {
     try {
-      console.log(this.idphotographer)
+      // console.log(this.idphotographer)
 
       const response = await this.messageService.getAllBy()
       console.log(response)
       this.mensajesRecibidos = response;
-      console.log(this.mensajesRecibidos)
+      // console.log(this.mensajesRecibidos)
 
     } catch (error) {
       console.log(error);
 
     }
+
+    // try {
+    //   this.usuarioRecibe = await this.messageService.getAllSent()
+
+    // } catch (error) {
+    //   console.log(error)
+    // }
 
   };
 
