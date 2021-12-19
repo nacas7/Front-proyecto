@@ -1,8 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
 import { ActivatedRoute } from '@angular/router';
 import { MesagesService } from 'src/app/mesages.service';
 import { Photographer } from '../interface/interface.photographer';
+
 
 @Component({
   selector: 'app-message',
@@ -15,8 +16,8 @@ export class MessageComponent implements OnInit {
   usuarioRecibe!: any;
   message!: string;
   idphotographer: string = '';
-  idusuario: string = '';
   formulario: FormGroup
+  @Input() idusuario!: Photographer;
   constructor(
     private messageService: MesagesService,
     private activaredRoute: ActivatedRoute
@@ -27,39 +28,35 @@ export class MessageComponent implements OnInit {
     this.activaredRoute.params.subscribe((params) => {
       this.idphotographer = params.photographerId;
 
-      // this.activaredRoute.params.subscribe((params) => {
-      //   this.idusuario = params.photographerId
-      // })
     })
+
   }
 
-  //cambiar mensajesRecibidos por usuarioRecibidos 
-  //cambiar el método getAllBy por el otro
 
   async ngOnInit() {
     try {
-      // console.log(this.idphotographer)
-
       const response = await this.messageService.getAllBy()
-      console.log(response)
       this.mensajesRecibidos = response;
-      // console.log(this.mensajesRecibidos)
+
 
     } catch (error) {
       console.log(error);
 
     }
 
-    // try {
-    //   this.usuarioRecibe = await this.messageService.getAllSent()
+    try {
+      console.log(this.idusuario)
+      const responde = await this.messageService.getAllSent()
+      this.usuarioRecibe = responde;
 
-    // } catch (error) {
-    //   console.log(error)
-    // }
+    } catch (error) {
+      console.log(error)
+    }
 
   };
 
   async onSubmit() {
+
     try {
       const newMessage = {
         ...this.formulario.value,

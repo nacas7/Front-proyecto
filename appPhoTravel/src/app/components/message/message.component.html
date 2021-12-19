@@ -1,14 +1,15 @@
 <div class="container">
     <div class="chat">
         <div class="row">
-            <div class="columna-1 col-8" *ngIf="idphotographer">
+            <!-- *ngIf="idphotographer" -->
+            <div class="columna-1 col-8">
                 <div class="msg-row">
                     <div class="msg-text">
                         <h4>Mensajes enviados por usuario</h4>
-                        <label></label>
-                        <!-- <p *ngFor="let recibidos of usuarioRecibe " {{recibidos | json}}>
-                            {{recibidos}}
-                        </p> -->
+                        <ul *ngFor="let recibidos of usuarioRecibe">
+                            <li>{{recibidos.nombre}}</li>
+                            <li>{{recibidos.message}}</li>
+                        </ul>
                     </div>
                 </div>
                 <form [formGroup]="formulario" (ngSubmit)="onSubmit()">
@@ -20,12 +21,13 @@
                 </form>
             </div>
             <div class="columna-2 col-4">
-                <h3>Mensajes Recibicdos</h3>
+                <h3>Mensajes Recibidos</h3>
                 <div class="mensajes">
-                    <div>
+                    <div *ngFor="let message of mensajesRecibidos">
                         <ul>
-                            <li *ngFor="let message of mensajesRecibidos">{{message | json }}</li>
-                            <li>{{message}}</li><br>
+                            <li>Mensaje recibido por: {{message.nombre}} {{message.apellidos}}</li>
+                            <li>{{message.message}}</li>
+                            <li>{{message.created_at}}</li>
                         </ul>
                     </div>
                 </div>
