@@ -16,10 +16,9 @@
                     <label class="form-label">Contraseña</label>
                     <input class="form-control" type="password" formControlName="username">
                 </div>
-                <input type="submit" value="Guardar" class="btn btn-block btn-dark">
-                <input type="submit" value="Eliminar cuenta" class="btn btn-block btn-danger">
-
             </form>
+            <input type="submit" value="Guardar" class="btn btn-block btn-dark">
+            <input type="submit" (click)="deleteUser()" value="Eliminar cuenta" class="btn btn-block btn-danger">
         </div>
     </div>
 

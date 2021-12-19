@@ -100,7 +100,8 @@ input{
     margin-top: 40px;
     font-weight: 400;
 }
-.columna-2 ul{
+
+ul{
     list-style: none;
     padding: 30px;
 }

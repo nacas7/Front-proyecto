@@ -24,7 +24,7 @@ export class UsuariosService {
       })
     }
     return this.HttpClient.get<any>(`${this.baseUrl}`, httpOptions).toPromise()
-  }
+  };
 
   register(formValue: any): Promise<any> {
     const httpOptions = {
@@ -33,7 +33,7 @@ export class UsuariosService {
       })
     }
     return this.HttpClient.post<any>(`${this.baseUrl}/register`, formValue, httpOptions).toPromise()
-  }
+  };
 
   login(formValue: any): Promise<any> {
     const httpOptions = {
@@ -42,15 +42,15 @@ export class UsuariosService {
       })
     }
     return this.HttpClient.post<any>(`${this.baseUrl}/login`, formValue, httpOptions).toPromise()
-  }
+  };
 
   logged(isLogged: boolean) {
     this.login$.next(isLogged)
-  }
+  };
 
   loginObs() {
     return this.login$.asObservable();
-  }
+  };
 
   // getById(idusuario: Photographer): Promise<any> {
   //   const httpOptions = {
@@ -70,6 +70,16 @@ export class UsuariosService {
       })
     }
     return this.HttpClient.put<any>(`${this.baseUrl}/profile${idusuarios}`, formValue, httpOptions).toPromise()
+  };
+
+  deleteById() {
+    const httpOptions = {
+      headers: new HttpHeaders({
+        'Authorization': localStorage.getItem('token_photravel')!
+      })
+
+    }
+    return this.HttpClient.delete<any>(`${this.baseUrl}`, httpOptions).toPromise()
   }
 
 

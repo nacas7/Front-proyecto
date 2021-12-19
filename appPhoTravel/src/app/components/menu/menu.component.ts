@@ -28,8 +28,6 @@ export class MenuComponent implements OnInit {
       this.isLogged = result;
     })
 
-
-
   }
 
   onClickLogout() {

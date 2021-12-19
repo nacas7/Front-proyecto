@@ -7,8 +7,9 @@
                     <div class="msg-text">
                         <h4>Mensajes enviados por usuario</h4>
                         <ul *ngFor="let recibidos of usuarioRecibe">
-                            <li>{{recibidos.nombre}}</li>
+                            <li>Mensaje enviado a: {{recibidos.nombre}}</li>
                             <li>{{recibidos.message}}</li>
+                            <li>{{recibidos.created_at}}</li>
                         </ul>
                     </div>
                 </div>
@@ -25,7 +26,7 @@
                 <div class="mensajes">
                     <div *ngFor="let message of mensajesRecibidos">
                         <ul>
-                            <li>Mensaje recibido por: {{message.nombre}} {{message.apellidos}}</li>
+                            <li>Mensaje recibido de: {{message.nombre}} {{message.apellidos}}</li>
                             <li>{{message.message}}</li>
                             <li>{{message.created_at}}</li>
                         </ul>
