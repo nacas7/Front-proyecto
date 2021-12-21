@@ -52,26 +52,6 @@ export class UsuariosService {
     return this.login$.asObservable();
   };
 
-  // getById(idusuario: Photographer): Promise<any> {
-  //   const httpOptions = {
-  //     headers: new HttpHeaders({
-  //       'Content-type': 'application/json'
-  //     })
-  //   }
-
-  //   return this.HttpClient.get<any>(`${this.baseUrl}/${idusuario.idusuarios}`, httpOptions).toPromise()
-  // };
-
-  upDateById(idusuarios: number, formValue: any): Promise<any> {
-    const httpOptions = {
-      headers: new HttpHeaders({
-        'Content-Type': 'application/json',
-
-      })
-    }
-    return this.HttpClient.put<any>(`${this.baseUrl}/profile${idusuarios}`, formValue, httpOptions).toPromise()
-  };
-
   deleteById() {
     const httpOptions = {
       headers: new HttpHeaders({
@@ -82,6 +62,32 @@ export class UsuariosService {
     return this.HttpClient.delete<any>(`${this.baseUrl}`, httpOptions).toPromise()
   }
 
+  updatePublic(formValue: any): Promise<any> {
+    const httpOptions = {
+      headers: new HttpHeaders({
+        'Authorization': localStorage.getItem('token_photravel')!
+      })
+    }
 
+    return this.HttpClient.put<any>(`${this.baseUrl}/public`, formValue, httpOptions).toPromise()
+  }
+
+  updatePrivate(formValue: any): Promise<any> {
+    const httpOptions = {
+      headers: new HttpHeaders({
+        'Authorization': localStorage.getItem('token_photravel')!
+      })
+    }
+    return this.HttpClient.put<any>(`${this.baseUrl}/private`, formValue, httpOptions).toPromise()
+  }
+
+  getById(): Promise<any> {
+    const httpOptions = {
+      headers: new HttpHeaders({
+        'Authorization': localStorage.getItem('token_photravel')!
+      })
+    }
+    return this.HttpClient.get<any>(`${this.baseUrl}/idUsuario`, httpOptions).toPromise()
+  }
 
 }

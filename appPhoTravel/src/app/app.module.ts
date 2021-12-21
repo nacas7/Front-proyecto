@@ -57,6 +57,7 @@ import { MapListaComponent } from './components/map-lista/map-lista.component';
     FilterPipe,
     MapListaComponent,
 
+
   ],
   imports: [
     BrowserModule,

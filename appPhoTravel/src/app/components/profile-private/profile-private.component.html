@@ -7,19 +7,23 @@
         <div class="col-8 offset-2">
             <h4>Cuenta</h4>
             <h6>Información personal</h6>
-            <form [formGroup]="formulario">
+            <form [formGroup]="formulario" (ngSubmit)="onSubmit()">
                 <div class="mb-3">
                     <label class="form-label">Email</label>
                     <input class="form-control" type="text" formControlName="email">
+                </div>
+                <div>
                     <p class="error" *ngIf="checkError('email', 'required')">El campo es requerido</p>
                 </div>
                 <div class="mb-3">
                     <label class="form-label">Contraseña</label>
                     <input class="form-control" type="password" formControlName="password">
+                </div>
+                <div>
                     <p class="error" *ngIf="checkError('password', 'required')">El campo es requerido</p>
                 </div>
+                <input type="submit" value="Guardar" class="btn btn-block btn-dark">
             </form>
-            <input type="submit" value="Guardar" class="btn btn-block btn-dark">
             <input type="submit" (click)="deleteUser()" value="Eliminar cuenta" class="btn btn-block btn-danger">
 
         </div>

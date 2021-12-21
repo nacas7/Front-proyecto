@@ -61,12 +61,13 @@ export class RegisterComponent implements OnInit {
 
   passwordValidator(form: AbstractControl) {
     const passwordValue = form.get('password')?.value;
-    const repitePasswordValue = form.get('repit_password')?.value;
+    const repitePasswordValue = form.value;
 
     if (passwordValue === repitePasswordValue) {
       return null;
     } else {
-      form.get('repit_password')?.setErrors({ passwordValidator: false })
+      form.get('repit_password')?.setErrors({ passwordValidator: true })
+
       return { passwordValidator: 'Las contraseñas no coinciden' };
     }
   };

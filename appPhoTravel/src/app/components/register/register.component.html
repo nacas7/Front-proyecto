@@ -47,7 +47,7 @@
         <p class="error" *ngIf="checkError('repit_password', 'required')">
             El campo es requerido
         </p>
-        <p class="error" *ngIf="formulario.hasError('passwordValidator') && formulario.get('repit_password')!.touched">
+        <p class="error" *ngIf="checkError('repit_password', 'passwordValidator')">
             Las password no coinciden</p>
     </div>
     <input type="submit" value="Enviar" class="btn btn-block btn-dark">

@@ -38,11 +38,6 @@ export class PhotographerPerfileComponent implements OnInit {
       this.isLogged = result;
     })
 
-    // this.activateRoute.params.subscribe(async params => {
-
-    //   let response = await this.allphotographer.getById(Number(params.idusuario));
-    //   this.photographer = response[0]
-    // })
   }
 
 }
