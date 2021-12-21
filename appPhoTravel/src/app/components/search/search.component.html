@@ -1,19 +1,23 @@
 <div class="container">
-    <button class="btn btn-dark" (click)="mostrarParrafo()">{{activo ? 'mapa' : 'lista'}}</button>
-</div>
-<div>
-    <div class="row" *ngIf="activo">
-        <div class="col-12 col-sm-12 col-md-4 col-lg-">
-            <app-map-photogtapers id="map"></app-map-photogtapers>
-        </div>
-        <div class="col-12 col-sm-12 col-md-10 col-lg-6">
-            <app-photographer></app-photographer>
-        </div>
+    <div class="row">
+        <button class="btn btn-dark" (click)="mostrarParrafo()">{{activo ? 'mapa' : 'lista'}}</button>
     </div>
-    <div class="row" *ngIf="!activo">
-        <div class="col-12 col-12">
-            <div>
+    <div>
+        <div class="row" *ngIf="activo">
+            <div class="col-12 col-sm-12 col-md-4 col-lg-6">
                 <app-map-photogtapers></app-map-photogtapers>
+            </div>
+            <div class="col-12 col-sm-12 col-md-10 col-lg-6">
+
+                <app-photographer></app-photographer>
+
+            </div>
+        </div>
+        <div class="row" *ngIf="!activo">
+            <div class="col-12 col-12">
+                <div>
+                    <app-map-lista></app-map-lista>
+                </div>
             </div>
         </div>
     </div>

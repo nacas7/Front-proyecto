@@ -4,25 +4,17 @@
             <!-- *ngIf="idphotographer" -->
             <div class="columna-1 col-8">
                 <div class="row">
-                    <!-- <div class="msg-user">
-                        <h4>Mensajes enviados por usuario</h4>
-                        <ul *ngFor="let recibidos of usuarioRecibe">
-                            <h6>Mensaje enviado a: {{recibidos.nombre}}</h6>
-                            <li>{{recibidos.message}}</li>
-                            <li>{{recibidos.created_at}}</li>
-                        </ul>
-                    </div> -->
                     <div class="msg-user">
                         <div class="titulo">
                             <h4>Mensajes enviados por usuario</h4>
                         </div>
-                        <div>
-                            <ul id="texto">
-                                <h6>Mensaje enviado a: Marina</h6>
-                                <li>Día 20/06/2021</li>
-                                <li>Hora: 20:30</li>
+                        <div class="scroll">
+                            <ul id="texto" *ngFor="let recibidos of usuarioRecibe">
+                                <h6>Mensaje enviado a: {{recibidos.nombre}}</h6>
+                                <li>Hora: {{recibidos.created_at |date: 'HH:mm'}} </li>
+                                <li>Día: {{recibidos.created_at |date:'dd-MM-yyyy'}} </li>
                                 <ul>
-                                    <li>Hola que tal</li>
+                                    <li>{{recibidos.message}}</li>
                                     <button class="delete"></button>
                                 </ul>
                             </ul>
@@ -45,20 +37,13 @@
                         [(ngModel)]="filterCity" />
                 </div>
                 <div class="mensajes">
-                    <!-- <div *ngFor="let message of mensajesRecibidos">
+                    <div *ngFor="let message of mensajesRecibidos" class="scroll">
                         <ul class="msg-text">
-                            <h6>Mensaje recibido de: {{message.nombre}} {{message.apellidos}}</h6>
-                            <li>{{message.message}}</li>
-                            <li>{{message.created_at}}</li>
-                        </ul>
-                    </div> -->
-                    <div>
-                        <ul class="msg-text">
-                            <h6>Mensaje recibido de: Natalia Casilda</h6>
-                            <li>Día 20/06/2021</li>
-                            <li>Hora: 20:30</li>
+                            <h6>Mensaje recibido de:{{message.nombre}} {{message.apellidos}}</h6>
+                            <li>Hora: {{message.created_at |date: 'HH:mm'}} </li>
+                            <li>Día: {{message.created_at |date:'dd-ll-yyyy'}} </li>
                             <ul>
-                                <li>Hola que tal</li>
+                                <li>{{message.message}}</li>
                             </ul>
                         </ul>
                     </div>

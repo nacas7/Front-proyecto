@@ -26,6 +26,7 @@ import { SearchComponent } from './components/search/search.component';
 import { MapPhotogtapersComponent } from './components/map-photogtapers/map-photogtapers.component';
 import { FormsModule } from '@angular/forms';
 import { FilterPipe } from './filter.pipe';
+import { MapListaComponent } from './components/map-lista/map-lista.component';
 
 
 
@@ -54,6 +55,7 @@ import { FilterPipe } from './filter.pipe';
     SearchComponent,
     MapPhotogtapersComponent,
     FilterPipe,
+    MapListaComponent,
 
   ],
   imports: [

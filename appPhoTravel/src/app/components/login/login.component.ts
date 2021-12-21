@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { AbstractControl, FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { UsuariosService } from 'src/app/usuarios.service';
 import Swal from 'sweetalert2';
@@ -20,9 +20,11 @@ export class LoginComponent implements OnInit {
     this.formulario = new FormGroup({
       email: new FormControl('', [
         Validators.required,
+
       ]),
       password: new FormControl('', [
-        Validators.required
+        Validators.required,
+
       ])
     })
   }
@@ -54,6 +56,7 @@ export class LoginComponent implements OnInit {
   checkError(controlName: string, error: string): boolean {
     return this.formulario.get(controlName)!.hasError(error) && this.formulario.get(controlName)!.touched;
   };
+
 
 
 

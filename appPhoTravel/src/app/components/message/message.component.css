@@ -7,6 +7,7 @@
     background: #f8f8ff;
     position: relative;
 border-radius: 10px;
+margin-bottom: 10%;
     
 
  }
@@ -44,8 +45,9 @@ div .titulo{
 .mensajes{
     color : #ffffff;
     padding : 6px;
-    height : 100vh;
+    height : 60vh;
     overflow : auto; 
+    margin-top: 10px;
 
 }
 #btn{
@@ -79,7 +81,25 @@ margin-left: 24px;
 #texto{
     width: 90%;
     margin-left: 48px;
+     margin-top: 10px;
+     
 }
 .delete{
     color: red;
+}
+.scroll{
+  position:relative;
+  max-height:415px;
+  overflow:hidden;
+  overflow-y:auto;
+}
+/* span {
+ width: 100%;
+  display:block;
+  color:white;
+  margin:5px;
+  background:blue;
+} */
+@keyframes scroll {
+	100% { top: -100%; }
 }
