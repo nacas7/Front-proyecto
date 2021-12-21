@@ -1,0 +1,95 @@
+input.ng-invalid.ng-touched{
+    border: 1px solid red;
+}
+.error{
+    color: red;
+    font-size: 13px;
+}
+span{
+  position: relative;
+  display: inline-flex;
+  width: 100px;
+  height: 30px;
+  margin: 0 15px;
+  perspective: 1000px;
+}
+span a{
+  font-size: 14px;
+  letter-spacing: 1px;
+  transform-style: preserve-3d;
+  transform: translateZ(-25px);
+  transition: transform .25s;
+  font-family: 'Montserrat', sans-serif;
+  
+}
+span a:before,
+span a:after{
+  position: absolute;
+  content: "perfil";
+  height: 30px;
+  width: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 5px solid black;
+  box-sizing: border-box;
+  border-radius: 5px;
+}
+span a:before{
+  color: #fff;
+  background: #1c1c1c;
+  transform: rotateY(0deg) translateZ(25px);
+}
+span a:after{
+  color: #1c1c1c;
+  transform: rotateX(90deg) translateZ(25px);
+}
+span a:hover{
+  transform: translateZ(-25px) rotateX(-90deg);
+}
+h4,h6{
+  text-align: center;
+}
+#span2{
+  position: relative;
+  display: inline-flex;
+  width: 100px;
+  height: 30px;
+  margin: 0 15px;
+  perspective: 1000px;
+}
+#span2 a{
+  font-size: 14px;
+  letter-spacing: 1px;
+  transform-style: preserve-3d;
+  transform: translateZ(-25px);
+  transition: transform .25s;
+  font-family: 'Montserrat', sans-serif;
+  
+}
+#span2 a:before,
+#span2 a:after{
+  position: absolute;
+  content: "cuenta";
+  height: 30px;
+  width: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 5px solid black;
+  box-sizing: border-box;
+  border-radius: 5px;
+}
+#spa2n a:before{
+  color: #fff;
+  background: #1c1c1c;
+  transform: rotateY(0deg) translateZ(25px);
+}
+#span2 a:after{
+  color: #1c1c1c;
+  transform: rotateX(90deg) translateZ(25px);
+}
+#span2 a:hover{
+  transform: translateZ(-25px) rotateX(-90deg);
+}
+

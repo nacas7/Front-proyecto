@@ -31,15 +31,10 @@ export class RegisterPhotographerComponent implements OnInit {
   }
 
   async onSubmit() {
+    console.log(this.formulario.value)
     await this.prefileServices.register(this.formulario.value)
     this.formulario.reset()
 
   };
-
-  delete(idusuario: number) {
-    this.prefileServices.deleteById(idusuario)
-
-
-  }
 
 }

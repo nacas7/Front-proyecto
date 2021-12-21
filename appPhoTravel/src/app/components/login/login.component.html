@@ -5,10 +5,12 @@
                 <div class="mb-3">
                     <label class="form-label">Email</label>
                     <input class="form-control" type="email" formControlName="email">
+                    <p class="error" *ngIf="checkError('email', 'required')">El campo es requerido</p>
                 </div>
                 <div class="mb-3">
                     <label class="form-label">Password</label>
                     <input class="form-control" type="password" formControlName="password">
+                    <p class="error" *ngIf="checkError('password', 'required')">El campo es requerido</p>
                 </div>
                 <input type="submit" value="Entrar" class="btn btn-block btn-dark">
             </form>

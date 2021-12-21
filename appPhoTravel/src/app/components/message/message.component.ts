@@ -12,6 +12,7 @@ import { Photographer } from '../interface/interface.photographer';
 })
 export class MessageComponent implements OnInit {
 
+  filterCity = '';
   mensajesRecibidos: any;
   usuarioRecibe!: any;
   message!: string;

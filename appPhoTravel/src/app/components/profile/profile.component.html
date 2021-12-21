@@ -1,6 +1,6 @@
 <div class="container">
-    <input type="button" value="Perfil" class="btn btn-block btn-dark" [routerLink]="['/profile']">
-    <input type="button" value="Cuenta" class="btn btn-block btn-dark" [routerLink]="['/profile-private']">
+    <span> <a type="button" value="Perfil" [routerLink]="['/profile']">Perfil/ </a></span>
+    <span id="span2"><a type="button" value="Cuenta" [routerLink]="['/profile-private']">Cuenta</a></span>
 </div>
 <div class="container">
     <div class="row">
@@ -15,15 +15,19 @@
                 <div class="mb-3">
                     <label class="form-label">Nombre</label>
                     <input class="form-control" type="text" formControlName="nombre">
+                    <p class="error" *ngIf="checkError('nombre', 'required')">El campo es requerido</p>
                 </div>
                 <div class="mb-3">
                     <label class="form-label">Apellidos</label>
                     <input class="form-control" type="text" formControlName="apellidos">
+                    <p class="error" *ngIf="checkError('nombre', 'required')">El campo es requerido</p>
                 </div>
                 <input type="submit" value="Actualizar datos" class="btn btn-block btn-dark">
             </form>
-            <input type="button" value="Photographer" class="btn btn-block btn-dark"
-                [routerLink]="['/register-photographer']" />
+            <a type="button" value="Photographer" [routerLink]="['/register-photographer']">Si desea registrarse como
+                fotógrafo/a <img src="../../../assets/imagenes/camara-fotografica.png" alt="">
+            </a>
+
 
         </div>
     </div>

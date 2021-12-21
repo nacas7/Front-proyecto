@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { UsuariosService } from 'src/app/usuarios.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-menu',
@@ -24,14 +25,14 @@ export class MenuComponent implements OnInit {
     }
 
     this.usuarioService.loginObs().subscribe((result) => {
-      console.log('Acción de login', result);
+      // console.log('Acción de login', result);
       this.isLogged = result;
     })
 
   }
 
   onClickLogout() {
-    const seguro = confirm('¿Quieres cerrar sesión?')
+    const seguro = Swal;
     if (seguro) {
       localStorage.removeItem('token_photravel');
       this.usuarioService.logged(false);

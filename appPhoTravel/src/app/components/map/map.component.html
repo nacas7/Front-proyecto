@@ -1,11 +1,10 @@
 <div class="container">
-    <div class="row col-12 col-md-6 offset-md-4">
-        <h4>Busca a tus fotógrafos</h4>
+    <div class="row col-12 col-md-12">
         <input type="text" class="form-control" (keydown.enter)="$event.preventDefault()"
             placeholder="Introduce localización" autocorrect="off" autocapitalize="off" spellcheck="off" type="text"
             #search>
     </div>
-    <div class="row col-10 col-md-4 offset-md-3">
+    <div class="row col-10 col-md-6">
         <agm-map [latitude]="lat" [longitude]="lng" [zoom]="zoom">
             <!-- <agm-marker [latitude]="lat" [longitude]="lng" [markerDraggable]="true" (dragEnd)="markerDragEnd($event)">
             </agm-marker> -->
@@ -14,30 +13,6 @@
                 [longitude]="photographer.long">
                 <agm-info-window>
                     <app-photographer-perfile [photographer]="photographer"></app-photographer-perfile>
-                    <!-- <div class="container">
-                        <div class="row">
-                            <div class="col-7">
-                                <div class="col s12 m7">
-                                    <h2 class="header">{{photographer.nombre}}</h2>
-                                    <div class="card-horizontal">
-                                        <div class="card-image">
-                                            <img src="https://lorempixel.com/100/190/nature/6">
-                                        </div>
-                                        <div class="card-stacked">
-                                            <div class="card-content">
-                                                <p>{{photographer.description}}</p>
-                                                <p>Web: <a [href]="photographer.web"
-                                                        target="_blank">{{photographer.web}}</a></p>
-                                            </div>
-                                            <div class="card-action">
-                                                <a [routerLink]="['/login']" class="btn btn-dark">Contactar</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div> -->
                 </agm-info-window>
             </agm-marker>
         </agm-map>

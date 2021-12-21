@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormControl } from '@angular/forms';
+import { FormGroup, FormControl, Validators, AbstractControl } from '@angular/forms';
 import { Router } from '@angular/router';
 import { UsuariosService } from 'src/app/usuarios.service';
 
@@ -17,13 +17,31 @@ export class RegisterComponent implements OnInit {
     private router: Router
   ) {
     this.formulario = new FormGroup({
-      username: new FormControl,
-      email: new FormControl,
-      nombre: new FormControl,
-      apellidos: new FormControl,
-      fecha_nacimiento: new FormControl,
-      password: new FormControl,
-      repit_password: new FormControl
+      username: new FormControl('', [
+        Validators.required,
+      ]),
+      email: new FormControl('', [
+        Validators.required,
+        Validators.pattern(/^((?!\.)[\w-_.]*[^.])(@\w+)(\.\w+(\.\w+)?[^.\W])$/)
+      ]),
+      nombre: new FormControl('', [
+        Validators.required
+      ]),
+      apellidos: new FormControl('', [
+        Validators.required
+      ]),
+      fecha_nacimiento: new FormControl('', [
+        Validators.required,
+        this.edadValidator
+      ]),
+      password: new FormControl('', [
+        Validators.required
+      ]),
+      repit_password: new FormControl('', [
+        Validators.required,
+        this.passwordValidator
+
+      ])
     })
   }
 
@@ -34,6 +52,44 @@ export class RegisterComponent implements OnInit {
   async onSubmit() {
     await this.usuariosServices.register(this.formulario.value)
     this.router.navigate(['/login'])
+  };
+
+  checkError(controlName: string, error: string): boolean {
+    return this.formulario.get(controlName)!.hasError(error) && this.formulario.get(controlName)!.touched;
+  };
+
+
+  passwordValidator(form: AbstractControl) {
+    const passwordValue = form.get('password')?.value;
+    const repitePasswordValue = form.get('repit_password')?.value;
+
+    if (passwordValue === repitePasswordValue) {
+      return null;
+    } else {
+      form.get('repit_password')?.setErrors({ passwordValidator: false })
+      return { passwordValidator: 'Las contraseñas no coinciden' };
+    }
+  };
+
+
+  edadValidator(control: AbstractControl) {
+    const edadValue = parseInt(control.value)
+
+    if (edadValue == parseInt('')) {
+      return null;
+    }
+
+    const edadMin = 18;
+    if (edadValue >= edadMin) {
+      return null
+
+    } else {
+      return { edadValidator: { min: edadMin } }
+    }
+
+
   }
+
+
 
 }

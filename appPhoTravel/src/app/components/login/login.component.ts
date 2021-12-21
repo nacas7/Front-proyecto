@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup } from '@angular/forms';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { UsuariosService } from 'src/app/usuarios.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-login',
@@ -17,8 +18,12 @@ export class LoginComponent implements OnInit {
     private router: Router) {
     this.error = '';
     this.formulario = new FormGroup({
-      email: new FormControl,
-      password: new FormControl
+      email: new FormControl('', [
+        Validators.required,
+      ]),
+      password: new FormControl('', [
+        Validators.required
+      ])
     })
   }
 
@@ -33,13 +38,22 @@ export class LoginComponent implements OnInit {
       this.error = response.error;
     } else {
       localStorage.setItem('token_photravel', response.token);
-      alert('login correcto');
+      Swal.fire({
+        title: 'Login correcto',
+        icon: 'success',
+      })
+
+
       this.UsuariosService.logged(true);
       this.router.navigate(['/profile']);
 
     }
 
   }
+
+  checkError(controlName: string, error: string): boolean {
+    return this.formulario.get(controlName)!.hasError(error) && this.formulario.get(controlName)!.touched;
+  };
 
 
 

@@ -3,32 +3,63 @@
         <div class="row">
             <!-- *ngIf="idphotographer" -->
             <div class="columna-1 col-8">
-                <div class="msg-row">
-                    <div class="msg-text">
+                <div class="row">
+                    <!-- <div class="msg-user">
                         <h4>Mensajes enviados por usuario</h4>
                         <ul *ngFor="let recibidos of usuarioRecibe">
-                            <li>Mensaje enviado a: {{recibidos.nombre}}</li>
+                            <h6>Mensaje enviado a: {{recibidos.nombre}}</h6>
                             <li>{{recibidos.message}}</li>
                             <li>{{recibidos.created_at}}</li>
                         </ul>
+                    </div> -->
+                    <div class="msg-user">
+                        <div class="titulo">
+                            <h4>Mensajes enviados por usuario</h4>
+                        </div>
+                        <div>
+                            <ul id="texto">
+                                <h6>Mensaje enviado a: Marina</h6>
+                                <li>Día 20/06/2021</li>
+                                <li>Hora: 20:30</li>
+                                <ul>
+                                    <li>Hola que tal</li>
+                                    <button class="delete"></button>
+                                </ul>
+                            </ul>
+                        </div>
+
                     </div>
                 </div>
                 <form [formGroup]="formulario" (ngSubmit)="onSubmit()">
                     <div class="enviar">
                         <input type="text" cols="30" rows="10" placeholder="Escribe el mensaje"
-                            formControlName="message" />
+                            formControlName="message" class="form-control" id="btnEnviar" />
                         <input type="submit" value="Enviar" id="btn" class="btn btn-dark">
                     </div>
                 </form>
             </div>
             <div class="columna-2 col-4">
-                <h3>Mensajes Recibidos</h3>
+                <div class="titulo">
+                    <h3>Mensajes Recibidos</h3>
+                    <input placeholder="Busca nombre" type="text" class="form-control" name="filterCity"
+                        [(ngModel)]="filterCity" />
+                </div>
                 <div class="mensajes">
-                    <div *ngFor="let message of mensajesRecibidos">
-                        <ul>
-                            <li>Mensaje recibido de: {{message.nombre}} {{message.apellidos}}</li>
+                    <!-- <div *ngFor="let message of mensajesRecibidos">
+                        <ul class="msg-text">
+                            <h6>Mensaje recibido de: {{message.nombre}} {{message.apellidos}}</h6>
                             <li>{{message.message}}</li>
                             <li>{{message.created_at}}</li>
+                        </ul>
+                    </div> -->
+                    <div>
+                        <ul class="msg-text">
+                            <h6>Mensaje recibido de: Natalia Casilda</h6>
+                            <li>Día 20/06/2021</li>
+                            <li>Hora: 20:30</li>
+                            <ul>
+                                <li>Hola que tal</li>
+                            </ul>
                         </ul>
                     </div>
                 </div>

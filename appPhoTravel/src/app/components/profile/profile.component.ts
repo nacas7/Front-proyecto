@@ -1,9 +1,10 @@
 
 import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup } from '@angular/forms';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { UsuariosService } from 'src/app/usuarios.service';
 import { Photographer } from '../interface/interface.photographer';
+import Swal from 'sweetalert2';
 
 
 @Component({
@@ -15,7 +16,9 @@ export class ProfileComponent implements OnInit {
 
   formulario: FormGroup;
   idUsuario?: number;
-  photographer: Photographer[];
+  photographer!: Photographer;
+
+
 
 
   constructor(
@@ -26,10 +29,14 @@ export class ProfileComponent implements OnInit {
 
   ) {
 
-    this.photographer = []
+
     this.formulario = new FormGroup({
-      nombre: new FormControl(),
-      apellidos: new FormControl()
+      nombre: new FormControl('', [
+        Validators.required
+      ]),
+      apellidos: new FormControl('', ([
+        Validators.required
+      ]))
 
     })
   }
@@ -37,23 +44,23 @@ export class ProfileComponent implements OnInit {
 
   ngOnInit(): void {
     this.activatedRoute.params.subscribe(async params => {
-      this.idUsuario = params.idusuario;
+      this.idUsuario = params.idUsuario;
       // const response = await this.usuariosServices.getById(params.idusuario)
       // this.formulario.get('nombre')?.setValue(response.nombre);
       // this.formulario.get('apellidos')?.setValue(response.apellidos)
     })
-
   }
 
-  // async onUpDate() {
-  //   console.log(this.formulario.value)
-  //   await this.usuariosServices.upDate(this.formulario.value)
-  //   this.formulario.reset()
-  // }
+
 
   async onSubmit() {
     this.formulario = await this.usuariosServices.upDateById(this.formulario.value, this.idUsuario)
+    Swal.fire({
+      title: 'Datos actualizados',
+      icon: 'success'
+    })
   }
+
   // onSubmit() {
   //   let formdata = new FormData();
   //   formdata.append('id', this.formulario.idusuarios);
@@ -71,6 +78,10 @@ export class ProfileComponent implements OnInit {
   //     })
   //     .catch((err) => console.log(err));
   // }
+
+  checkError(controlName: string, error: string): boolean {
+    return this.formulario.get(controlName)!.hasError(error) && this.formulario.get(controlName)!.touched;
+  };
 
 
 }

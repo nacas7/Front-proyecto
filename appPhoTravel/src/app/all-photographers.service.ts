@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root'
@@ -13,10 +13,16 @@ export class AllPhotographersService {
 
 
   getAll(): Promise<any> {
-    return this.HttpClient.get<any>(`${this.baseUrl}`).toPromise()
+    const httpOptions = {
+      headers: new HttpHeaders({
+        'Content-Type': 'application/json'
+      })
+    }
+    return this.HttpClient.get<any>(`${this.baseUrl}`, httpOptions).toPromise()
   }
 
   getById(idusuario: any): Promise<any> {
+
     return this.HttpClient.get<any>(`${this.baseUrl}/${idusuario}`).toPromise()
 
   }

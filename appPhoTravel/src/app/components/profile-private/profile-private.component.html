@@ -1,24 +1,27 @@
 <div class="container">
-    <input type="button" value="Perfil" class="btn btn-block btn-dark" [routerLink]="['/profile']">
-    <input type="button" value="Cuenta" class="btn btn-block btn-dark" [routerLink]="['/profile-private']">
+    <span> <a type="button" value="Perfil" [routerLink]="['/profile']">Perfil/ </a></span>
+    <span id="span2"><a type="button" value="Cuenta" [routerLink]="['/profile-private']">Cuenta</a></span>
 </div>
 <div class="container">
     <div class="row">
         <div class="col-8 offset-2">
             <h4>Cuenta</h4>
             <h6>Información personal</h6>
-            <form>
+            <form [formGroup]="formulario">
                 <div class="mb-3">
                     <label class="form-label">Email</label>
-                    <input class="form-control" type="text" formControlName="username">
+                    <input class="form-control" type="text" formControlName="email">
+                    <p class="error" *ngIf="checkError('email', 'required')">El campo es requerido</p>
                 </div>
                 <div class="mb-3">
                     <label class="form-label">Contraseña</label>
-                    <input class="form-control" type="password" formControlName="username">
+                    <input class="form-control" type="password" formControlName="password">
+                    <p class="error" *ngIf="checkError('password', 'required')">El campo es requerido</p>
                 </div>
             </form>
             <input type="submit" value="Guardar" class="btn btn-block btn-dark">
             <input type="submit" (click)="deleteUser()" value="Eliminar cuenta" class="btn btn-block btn-danger">
+
         </div>
     </div>
 

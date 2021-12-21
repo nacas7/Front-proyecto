@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { UsuariosService } from 'src/app/usuarios.service';
 
@@ -9,10 +10,21 @@ import { UsuariosService } from 'src/app/usuarios.service';
 })
 export class ProfilePrivateComponent implements OnInit {
 
+  formulario: FormGroup;
   constructor(
     private usuarioService: UsuariosService,
     private router: Router
-  ) { }
+  ) {
+    this.formulario = new FormGroup({
+      email: new FormControl('', [
+        Validators.required
+      ]),
+      password: new FormControl('', [
+        Validators.required
+      ])
+
+    })
+  }
 
   ngOnInit(): void {
   }
@@ -26,6 +38,10 @@ export class ProfilePrivateComponent implements OnInit {
       this.usuarioService.logged(false);
       this.router.navigate(['/home'])
     }
-  }
+  };
+
+  checkError(controlName: string, error: string): boolean {
+    return this.formulario.get(controlName)!.hasError(error) && this.formulario.get(controlName)!.touched;
+  };
 
 }

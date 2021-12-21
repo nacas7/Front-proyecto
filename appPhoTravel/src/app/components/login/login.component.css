@@ -1,4 +1,6 @@
 @import url(https://fonts.googleapis.com/css?family=PT+Mono);
+@import 'bulma/css/bulma.css';
+
 
 .container{
     display: static;
@@ -58,6 +60,18 @@ a:focus {
     background-size: 100% 100%;
     text-decoration: none;
 }
+
+/* input.ng-valid.ng-touched{ 
+    border: 1px solid lightgreen;
+} */
+input.ng-invalid.ng-touched{
+    border: 1px solid red;
+}
+.error{
+    color: red;
+    font-size: 13px;
+}
+
 
 
 
