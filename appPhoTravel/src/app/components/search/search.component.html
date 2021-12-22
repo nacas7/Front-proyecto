@@ -1,6 +1,7 @@
 <div class="container">
     <div class="row">
-        <button class="btn btn-dark" (click)="mostrarParrafo()">{{activo ? 'mapa' : 'lista'}}</button>
+        <button *ngIf="!activo" class="btn btn-dark" (click)="mostrarParrafo()">Lista</button>
+        <img *ngIf="activo" src="../../../assets/imagenes/map.png" class="map" (click)="mostrarParrafo()">
     </div>
     <div>
         <div class="row" *ngIf="activo">

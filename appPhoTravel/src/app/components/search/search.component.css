@@ -11,4 +11,7 @@ margin-bottom: 10%
 .mapa{
     background-color: red;
 }
-    
+.map{
+    cursor: pointer;
+    width: 70px;
+}
