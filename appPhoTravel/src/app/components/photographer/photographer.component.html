@@ -14,8 +14,9 @@
                             <div class="card-content">
                                 <h2 class="header">{{user.nombre}} {{user.apellidos}}</h2>
                                 <p>{{user.description}}</p>
-                                <p>Web: <a [href]="user.web" target="_blank">{{user.web}}</a></p>
-                                <p>Ubicación: {{user.ubication}}</p>
+                                <p><img src="../../../assets/imagenes/www.png" /> <a [href]="user.web"
+                                        target="_blank">{{user.web}}</a></p>
+                                <p><img src="../../../assets/imagenes/map.png" /> {{user.ubication}}</p>
                             </div>
                             <div class="card-action">
                                 <a [routerLink]="['/message/', user.idphotographer]" class="btn btn-dark">Contactar</a>

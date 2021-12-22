@@ -1,54 +1,56 @@
-<form [formGroup]="formulario" (ngSubmit)="onSubmit()">
-    <div class="mb-3">
-        <label class="form-label">Nombre de usuario</label>
-        <input class="form-control" type="text" formControlName="username">
-        <p class="error" *ngIf="checkError('username', 'required')">
-            El campo es requerido</p>
-    </div>
-    <div class="mb-3">
-        <label class="form-label">Email</label>
-        <input class="form-control" type="email" formControlName="email">
-        <p class="error" *ngIf="checkError('email', 'required')">
-            El campo es requerido</p>
-        <p class="error" *ngIf="checkError('email', 'pattern')">El formato de email no es válido</p>
-    </div>
-    <div class="mb-3">
-        <label class="form-label">Nombre</label>
-        <input class="form-control" type="text" formControlName="nombre">
-        <p class="error" *ngIf="checkError('nombre', 'required')">
-            El campo es requerido</p>
-    </div>
-    <div class="mb-3">
-        <label class="form-label">Apellidos</label>
-        <input class="form-control" type="text" formControlName="apellidos">
-        <p class="error" *ngIf="checkError('apellidos', 'required')">
-            El campo es requerido</p>
-    </div>
-    <div class="mb-3">
-        <label>Fecha de nacimiento</label>
-        <input class="form-control" type="text" formControlName="fecha_nacimiento" placeholder="aaaa-dd-mm">
-        <p class="error" *ngIf="checkError('fecha_nacimiento', 'required')">
-            El campo es requerido</p>
-        <p class="error" *ngIf="checkError('fecha_nacimiento', 'edadValidator')"> Debe ser mayor de
-            {{formulario.get('fecha_nacimiento')?.errors?.edadValidator.min}} años</p>
-    </div>
-    <div class="mb-3">
-        <label class="form-label">Contraseña</label>
-        <input class="form-control" type="password" formControlName="password">
-        <p class="error" *ngIf="checkError('password', 'required')">
-            El campo es requerido
-        </p>
+<div class="container">
+    <form [formGroup]="formulario" (ngSubmit)="onSubmit()">
+        <div class="mb-3">
+            <label class="form-label">Nombre de usuario</label>
+            <input class="form-control" type="text" formControlName="username">
+            <p class="error" *ngIf="checkError('username', 'required')">
+                El campo es requerido</p>
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Email</label>
+            <input class="form-control" type="email" formControlName="email">
+            <p class="error" *ngIf="checkError('email', 'required')">
+                El campo es requerido</p>
+            <p class="error" *ngIf="checkError('email', 'pattern')">El formato de email no es válido</p>
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Nombre</label>
+            <input class="form-control" type="text" formControlName="nombre">
+            <p class="error" *ngIf="checkError('nombre', 'required')">
+                El campo es requerido</p>
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Apellidos</label>
+            <input class="form-control" type="text" formControlName="apellidos">
+            <p class="error" *ngIf="checkError('apellidos', 'required')">
+                El campo es requerido</p>
+        </div>
+        <div class="mb-3">
+            <label>Fecha de nacimiento</label>
+            <input class="form-control" type="text" formControlName="fecha_nacimiento" placeholder="aaaa-dd-mm">
+            <p class="error" *ngIf="checkError('fecha_nacimiento', 'required')">
+                El campo es requerido</p>
+            <p class="error" *ngIf="checkError('fecha_nacimiento', 'edadValidator')"> Debe ser mayor de
+                {{formulario.get('fecha_nacimiento')?.errors?.edadValidator.min}} años</p>
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Contraseña</label>
+            <input class="form-control" type="password" formControlName="password">
+            <p class="error" *ngIf="checkError('password', 'required')">
+                El campo es requerido
+            </p>
 
-    </div>
-    <div class="mb-3">
-        <label class="form-label">Repite contraseña</label>
-        <input class="form-control" type="password" formControlName="repit_password">
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Repite contraseña</label>
+            <input class="form-control" type="password" formControlName="repit_password">
 
-        <p class="error" *ngIf="checkError('repit_password', 'required')">
-            El campo es requerido
-        </p>
-        <p class="error" *ngIf="checkError('repit_password', 'passwordValidator')">
-            Las password no coinciden</p>
-    </div>
-    <input type="submit" value="Enviar" class="btn btn-block btn-dark">
-</form>
+            <p class="error" *ngIf="checkError('repit_password', 'required')">
+                El campo es requerido
+            </p>
+            <p class="error" *ngIf="checkError('repit_password', 'passwordValidator')">
+                Las password no coinciden</p>
+        </div>
+        <input type="submit" value="Enviar" class="btn btn-block btn-dark">
+    </form>
+</div>

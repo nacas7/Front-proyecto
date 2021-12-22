@@ -11,3 +11,6 @@ input.ng-invalid.ng-touched{
     color: red;
     font-size: 13px;
 }
+.container{
+    width:80% ;
+}

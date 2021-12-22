@@ -61,7 +61,7 @@ export class RegisterComponent implements OnInit {
 
   passwordValidator(form: AbstractControl) {
     const passwordValue = form.get('password')?.value;
-    const repitePasswordValue = form.value;
+    const repitePasswordValue = form.get('repit_password')?.value;
 
     if (passwordValue === repitePasswordValue) {
       return null;

@@ -5,10 +5,12 @@ input{
     padding: 5px;
      margin-bottom: 10px;
 }
-/* .card:hover{
-    transform: scale(1.2);
-     transition: 0.5s all ease-in-out;
-} */
+.card:hover{
+    /* transform: scale(1.2);
+     transition: 0.5s all ease-in-out; */
+     border: 1px solid black;
+}
+
 /* span {
  width: 100%;
   display:block;
@@ -16,6 +18,22 @@ input{
   margin:5px;
   background:blue;
 } */
+img{
+  width: 20px;
+  height: 20px;
+  padding-left: 5px;
+}
+p{
+  padding-left: 20px;
+}
+p a{
+   padding-left: 20px;
+   text-decoration: none;
+   color: black
+}
+p a:hover{
+  color: rgb(56, 55, 55);
+}
 .scroll{
   position:relative;
   max-height:415px;
