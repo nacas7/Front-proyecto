@@ -93,3 +93,12 @@ h4,h6{
   transform: translateZ(-25px) rotateX(-90deg);
 }
 
+button{
+  border:none;
+  background-color:white ;
+}
+img{
+  margin-top: 10px;
+    width: 30px;
+    height: 30px;
+}

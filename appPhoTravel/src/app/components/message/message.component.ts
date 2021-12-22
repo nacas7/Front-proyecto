@@ -72,4 +72,9 @@ export class MessageComponent implements OnInit {
     }
   }
 
-};
+  async deleteMessage() {
+    console.log('elimina')
+    await this.messageService.deleteByMessage()
+  }
+
+}

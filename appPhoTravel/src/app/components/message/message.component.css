@@ -84,9 +84,16 @@ margin-left: 24px;
      margin-top: 10px;
      
 }
-.delete{
-    color: red;
+button .delete{
+background-color: red;
 }
+button .delete:hover{
+    background-color: red;
+}
+h6{
+    font-size: 15px;
+}
+
 .scroll{
   position:relative;
   max-height:415px;

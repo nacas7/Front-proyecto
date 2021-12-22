@@ -5,5 +5,10 @@ margin-bottom: 10%
 .btn{
     width: 10%;
 }
-
+.row{
+    padding-top: 20px;
+}
+.mapa{
+    background-color: red;
+}
     

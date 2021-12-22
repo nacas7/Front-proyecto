@@ -42,6 +42,15 @@ export class MesagesService {
     return this.HttpClient.get<any>(`${this.baseUrl}/received`, httpOptions).toPromise()
   }
 
+  deleteByMessage(): Promise<any> {
+    const httpOptions = {
+      headers: new HttpHeaders({
+        'Authorization': localStorage.getItem('token_photravel')!
+      })
+    }
+    return this.HttpClient.delete<any>(`${this.baseUrl}`, httpOptions).toPromise()
+  }
+
 
 
 

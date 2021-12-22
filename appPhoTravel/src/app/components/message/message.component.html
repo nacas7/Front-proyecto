@@ -15,7 +15,7 @@
                                 <li>Día: {{recibidos.created_at |date:'dd-MM-yyyy'}} </li>
                                 <ul>
                                     <li>{{recibidos.message}}</li>
-                                    <button class="delete"></button>
+                                    <button class="delete" (click)="deleteMessage()"></button>
                                 </ul>
                             </ul>
                         </div>
@@ -39,11 +39,12 @@
                 <div class="mensajes">
                     <div *ngFor="let message of mensajesRecibidos" class="scroll">
                         <ul class="msg-text">
-                            <h6>Mensaje recibido de:{{message.nombre}} {{message.apellidos}}</h6>
+                            <h6>Mensaje recibido de: {{message.nombre}} {{message.apellidos}}</h6>
                             <li>Hora: {{message.created_at |date: 'HH:mm'}} </li>
                             <li>Día: {{message.created_at |date:'dd-ll-yyyy'}} </li>
                             <ul>
                                 <li>{{message.message}}</li>
+                                <button class="delete" (click)="deleteMessage()"></button>
                             </ul>
                         </ul>
                     </div>
