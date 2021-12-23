@@ -1,9 +1,9 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnInit, Output } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
 import { ActivatedRoute } from '@angular/router';
 import { MesagesService } from 'src/app/mesages.service';
 import { Photographer } from '../interface/interface.photographer';
-
+import { EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-message',
@@ -20,6 +20,8 @@ export class MessageComponent implements OnInit {
   idphotographer: string = '';
   formulario: FormGroup
   @Input() idusuario!: Photographer;
+
+  @Output() respuesta: EventEmitter<string>;
   constructor(
     private messageService: MesagesService,
     private activaredRoute: ActivatedRoute
@@ -28,6 +30,7 @@ export class MessageComponent implements OnInit {
     this.formulario = new FormGroup({
       message: new FormControl()
     })
+    this.respuesta = new EventEmitter();
 
   }
 
@@ -77,4 +80,7 @@ export class MessageComponent implements OnInit {
     await this.messageService.deleteByMessage()
   }
 
+  enviarRespuesta(mensaje: any) {
+    this.respuesta.emit(mensaje)
+  }
 }

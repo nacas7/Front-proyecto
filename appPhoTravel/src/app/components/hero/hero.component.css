@@ -58,7 +58,7 @@ padding-bottom: 5%;
 }
 
 .primeraImagen{
-  background-image: url('../../../assets/imagenes/arbol-min.jpg');
+  background-image: url('../../../assets/imagenes-2/arbol-min-min.jpg');
   width: 300px;
   height: 300px;
   background-size: cover;
@@ -67,7 +67,7 @@ padding-bottom: 5%;
 }
 
 .primeraImagen:hover{
-  background-image: url('../../../assets/imagenes/campo-min.jpg');
+  background-image: url('../../../assets/imagenes-2/campo-min-min.jpg');
    /* width: 100%;
   height: 100%; */
 
@@ -78,7 +78,7 @@ padding-bottom: 5%;
 
 }
 .segundaImagen{
- background-image: url('../../../assets/imagenes/faro-min.jpg');
+ background-image: url('../../../assets/imagenes-2/faro-min-min.jpg');
  height: 300px;
   border-radius: 6px;
    background-size: cover;
@@ -86,45 +86,45 @@ padding-bottom: 5%;
 }
 
 .segundaImagen:hover{
-  background-image: url('../../../assets/imagenes/acantilado-min.jpg');
+  background-image: url('../../../assets/imagenes-2/acantilado-min-min.jpg');
 }
 .terceraImagen{
-  background-image: url('../../../assets/imagenes/camioneta-min.jpg');
+  background-image: url('../../../assets/imagenes-2/camioneta-min-min.jpg');
    height: 300px;
   background-size: cover;
   border-radius: 6px; 
   background-position: center bottom;
 }
 .terceraImagen:hover{
-   background-image: url('../../../assets/imagenes/barco.jpg');
+   background-image: url('../../../assets/imagenes-2/barco-min.jpg');
 
 }
 .cuartaImagen{
-    background-image: url('../../../assets/imagenes/naturaleza-1.jpg');
+    background-image: url('../../../assets/imagenes-2/naturaleza-1-min.jpg');
    height: 300px;
   background-size: cover;
   border-radius: 6px; 
   background-position: center bottom;
 }
 .cuartaImagen:hover{
-   background-image: url('../../../assets/imagenes/naturaleza-2.jpg');
+   background-image: url('../../../assets/imagenes-2/naturaleza-2-min.jpg');
 
 }
 .quintaImagen{
-   background-image: url('../../../assets/imagenes/montaña-1.jpg');
+   background-image: url('../../../assets/imagenes-2/montaña-1-min.jpg');
    height: 300px;
   background-size: cover;
   border-radius: 6px; 
   background-position: center bottom;
 }
 .quintaImagen:hover{
-   background-image: url('../../../assets/imagenes/montaña-2.jpg');
+   background-image: url('../../../assets/imagenes-2/montaña-2-min.jpg');
      background-position: center center;
  
 
 }
 .sextaImagen{
-   background-image: url('../../../assets/imagenes/Madrid.jpg');
+   background-image: url('../../../assets/imagenes-2/Madrid-min.jpg');
    height: 300px;
   background-size: cover;
   border-radius: 6px; 
@@ -132,17 +132,17 @@ padding-bottom: 5%;
 
 }
 .sextaImagen:hover{
-  background-image: url('../../../assets/imagenes/barcelona.jpg');
+  background-image: url('../../../assets/imagenes-2/barcelona-min.jpg');
 }
 .septimaImagen{
-   background-image: url('../../../assets/imagenes/septima-1.jpg');
+   background-image: url('../../../assets/imagenes-2/septima-1-min.jpg');
    height: 300px;
   background-size: cover;
   border-radius: 6px; 
   background-position: center center
 }
 .septimaImagen:hover{
-   background-image: url('../../../assets/imagenes/septima-2.jpg');
+   background-image: url('../../../assets/imagenes-2/septima-2-min.jpg');
  
 }
 

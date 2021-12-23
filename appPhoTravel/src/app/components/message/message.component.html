@@ -26,7 +26,8 @@
                     <div class="enviar">
                         <input type="text" cols="30" rows="10" placeholder="Escribe el mensaje"
                             formControlName="message" class="form-control" id="btnEnviar" />
-                        <input type="submit" value="Enviar" id="btn" class="btn btn-dark">
+                        <button type="submit" id="btn" class="btn btn-dark"
+                            (click)="enviarRespuesta($event)">Enviar</button>
                     </div>
                 </form>
             </div>
