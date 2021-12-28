@@ -1,9 +1,10 @@
-import { Component, Input, OnInit, Output } from '@angular/core';
+import { Component, Input, OnInit, Output, EventEmitter } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
 import { ActivatedRoute } from '@angular/router';
 import { MesagesService } from 'src/app/mesages.service';
 import { Photographer } from '../interface/interface.photographer';
-import { EventEmitter } from '@angular/core';
+import { Messages } from '../interface/messages.interface';
+
 
 @Component({
   selector: 'app-message',
@@ -19,9 +20,15 @@ export class MessageComponent implements OnInit {
   message!: string;
   idphotographer: string = '';
   formulario: FormGroup
+
   @Input() idusuario!: Photographer;
 
-  @Output() respuesta: EventEmitter<string>;
+
+
+  @Output() respuesta: EventEmitter<Messages>;
+
+  @Output() eliminarMensaje: EventEmitter<Messages>;
+
   constructor(
     private messageService: MesagesService,
     private activaredRoute: ActivatedRoute
@@ -31,6 +38,7 @@ export class MessageComponent implements OnInit {
       message: new FormControl()
     })
     this.respuesta = new EventEmitter();
+    this.eliminarMensaje = new EventEmitter();
 
   }
 
@@ -76,11 +84,23 @@ export class MessageComponent implements OnInit {
   }
 
   async deleteMessage() {
-    console.log('elimina')
-    await this.messageService.deleteByMessage()
+    const eliminar = await this.messageService.deleteByMessage()
+    this.eliminarMensaje.emit(eliminar)
   }
 
-  enviarRespuesta(mensaje: any) {
-    this.respuesta.emit(mensaje)
+  enviarRespuesta(message: string) {
+    // this.respuesta.emit(message)
+    console.log(message)
   }
+
+
+  deleteMessages($event: any) {
+    console.log($event)
+  }
+
+
+
+
+
+
 }

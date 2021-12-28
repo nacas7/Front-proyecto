@@ -13,7 +13,7 @@
                                 <h6>Mensaje enviado a: {{recibidos.nombre}}</h6>
                                 <li>Hora: {{recibidos.created_at |date: 'HH:mm'}} </li>
                                 <li>Día: {{recibidos.created_at |date:'dd-MM-yyyy'}} </li>
-                                <ul>
+                                <ul (eliminarMensaje)="deleteMessages($event)">
                                     <li>{{recibidos.message}}</li>
                                     <button class="delete" (click)="deleteMessage()"></button>
                                 </ul>
@@ -22,14 +22,15 @@
 
                     </div>
                 </div>
-                <form [formGroup]="formulario" (ngSubmit)="onSubmit()">
-                    <div class="enviar">
-                        <input type="text" cols="30" rows="10" placeholder="Escribe el mensaje"
-                            formControlName="message" class="form-control" id="btnEnviar" />
-                        <button type="submit" id="btn" class="btn btn-dark"
-                            (click)="enviarRespuesta($event)">Enviar</button>
-                    </div>
-                </form>
+                <div (click)="enviarRespuesta(message)">
+                    <form [formGroup]="formulario" (ngSubmit)="onSubmit()">
+                        <div class="enviar">
+                            <input type="text" cols="30" rows="10" placeholder="Escribe el mensaje"
+                                formControlName="message" class="form-control" id="btnEnviar" />
+                            <button type="submit" id="btn" class="btn btn-dark">Enviar</button>
+                        </div>
+                    </form>
+                </div>
             </div>
             <div class="columna-2 col-4">
                 <div class="titulo">
@@ -43,7 +44,7 @@
                             <h6>Mensaje recibido de: {{message.nombre}} {{message.apellidos}}</h6>
                             <li>Hora: {{message.created_at |date: 'HH:mm'}} </li>
                             <li>Día: {{message.created_at |date:'dd-ll-yyyy'}} </li>
-                            <ul>
+                            <ul (eliminarMensaje)="deleteMessages($event)">
                                 <li>{{message.message}}</li>
                                 <button class="delete" (click)="deleteMessage()"></button>
                             </ul>
